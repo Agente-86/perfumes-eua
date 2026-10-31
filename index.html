@@ -34,7 +34,8 @@ h1{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1.1;m
 .search input{width:100%;font:inherit;font-size:1.05rem;padding:13px 44px 13px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);outline:none}
 .search input:focus{border-color:var(--accent)}
 .search button{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--muted);font-size:1.3rem;width:36px;height:36px;border-radius:8px;cursor:pointer}
-.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+/* botões quebram em mais de uma linha: no celular nenhum fica escondido fora da tela */
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:2px}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:.82rem;padding:6px 11px;border-radius:999px;cursor:pointer;white-space:nowrap}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -136,7 +137,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
   </header>
   <div class="bar">
     <div class="search">
-      <input id="q" type="search" placeholder="Casa ou perfume: dior, eternity, 1 million…" autocomplete="off" aria-label="Buscar casa ou perfume">
+      <input id="q" type="search" placeholder="Casa, sigla ou perfume: ysl, pdm, eternity…" autocomplete="off" aria-label="Buscar casa ou perfume">
       <button id="clr" type="button" aria-label="Limpar busca" hidden>×</button>
     </div>
     <div class="chips" id="bands" role="group" aria-label="Faixa de preço"></div>
@@ -175,7 +176,20 @@ const FOTOS = {"1":"66c490d1e480c25e3e0d51b834d23ee5.jpg","10":"840e0346828ef2ac
 const BANDS = [["all","Todas"],["b150","> US$ 150"],["b100","US$ 100–150"],["b50","US$ 50–100"],["b30","US$ 30–50"]];
 const TIPOS = [["grife","Grife"],["nicho","Nicho"],["arabe","Árabe"],["varejo","Varejo"]];
 // categorias (coluna AC da planilha): somam-se ao tipo de casa; um clássico de grife aparece em Grife e em Clássicos
-const CATS = [["classico","Clássicos","Clássico"], ["dc","DC Clássico","DC Clássico"]];
+const CATS = [["classico","Clássicos","Clássico"], ["dc","DC Clássicos","DC Clássico"]];
+// siglas e nomes alternativos das casas, para a busca (ysl, ck, pdm, mfk...)
+const ALIAS = {
+  "Yves Saint Laurent":"ysl saint laurent", "Calvin Klein":"ck", "Parfums de Marly":"pdm marly", "Maison Francis Kurkdjian":"mfk kurkdjian",
+  "Dolce&Gabbana":"d&g dg dolce gabbana", "Jean Paul Gaultier":"jpg gaultier", "Ralph Lauren":"rl", "Tom Ford":"tf", "Louis Vuitton":"lv",
+  "Giorgio Armani":"ga armani", "Emporio Armani":"ea armani", "Abercrombie & Fitch":"a&f af abercrombie", "American Eagle":"ae aeo",
+  "Banana Republic":"br", "Maison Margiela":"mm margiela martin", "Jimmy Choo":"jc", "Carolina Herrera":"ch", "Viktor&Rolf":"v&r vr viktor rolf",
+  "Tiziana Terenzi":"tt", "Narciso Rodriguez":"nr", "Michael Kors":"mk", "Montblanc":"mont blanc", "Rabanne":"paco rabanne",
+  "Mugler":"thierry mugler", "Kilian":"by kilian", "Dior":"christian dior cd", "Bvlgari":"bulgari", "Penhaligon's":"penhaligons",
+  "Boadicea the Victorious":"boadicea", "Jo Malone London":"jo malone", "Hugo Boss":"boss", "Salvatore Ferragamo":"ferragamo",
+  "Issey Miyake":"issey", "Tommy Hilfiger":"tommy", "Tommy Bahama":"tommy", "Initio":"initio parfums prives", "Joop!":"joop"
+};
+// sigla digitada (ck, ysl...) não procura no meio das palavras ("ck" não acha "Black"): vale a sigla da casa ou o começo de uma palavra
+const SIGLAS = new Set(Object.values(ALIAS).flatMap(s => s.split(" ")).filter(w => w.length <= 3));
 // clássicos descontinuados: só aparecem pelo botão DC Clássico, fora das faixas de preço (o preço, quando há, é de colecionador)
 const isDC = p => (p.cat||[]).includes("DC Clássico");
 // tipos de preço manual: chave no documento de precos_manuais, rótulo do botão, rótulo do campo, exemplo de fonte, orientação
@@ -243,8 +257,10 @@ function view(p){
 
 function matches(p, v){
   if (state.q){
-    const hay = norm(`${p.c} ${p.p} ${p.k} ${p.ml||""}`);
-    if (!norm(state.q).split(/\s+/).filter(Boolean).every(t => hay.includes(t))) return false;
+    const hay = norm(`${p.c} ${ALIAS[p.c]||""} ${p.p} ${p.k} ${p.ml||""}`);
+    const words = hay.split(/[\s\-]+/), sig = (ALIAS[p.c]||"").split(" ");
+    const hit = t => SIGLAS.has(t) ? sig.includes(t) || words.some(w => w.startsWith(t)) : hay.includes(t);
+    if (!norm(state.q).split(/\s+/).filter(Boolean).every(hit)) return false;
   }
   if (isDC(p) !== state.dc) return false;
   if (!state.dc && state.band!=="all" && v.band!==state.band) return false;
@@ -392,7 +408,8 @@ function render(){
 
 function chips(){
   document.getElementById("bands").innerHTML = BANDS.map(([k,l]) => `<button type="button" class="chip" data-band="${k}" aria-pressed="${state.band===k}">${l}</button>`).join("");
-  const t = [...TIPOS, ...CATS.map(([k,l]) => [k,l]), ["semPreco","Sem preço"], ...(CONSULTA ? [] : [["onlyManual","Anotados"]])];
+  // Sem preço e Anotados são referência do dono: não aparecem no site público
+  const t = [...TIPOS, ...CATS.map(([k,l]) => [k,l]), ...(CONSULTA ? [] : [["semPreco","Sem preço"], ["onlyManual","Anotados"]])];
   document.getElementById("types").innerHTML = t.map(([k,l]) => `<button type="button" class="chip${k==="onlyManual"?" m":""}" data-flag="${k}" aria-pressed="${state[k]}">${l}</button>`).join("");
 }
 
