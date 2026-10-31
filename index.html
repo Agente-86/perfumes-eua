@@ -759,7 +759,8 @@ async function removePhoto(id){
 
 chips(); render();
 const ds = document.getElementById("dbstate");
-if (CONSULTA) { fotos = FOTOS; ds.textContent = "Consulta somente leitura. Preços de referência nos EUA: confira na loja antes de comprar."; render(); }
+// no site público a linha de contagem sai, para sobrar tela no celular
+if (CONSULTA) { fotos = FOTOS; document.getElementById("count").hidden = true; ds.textContent = "Consulta somente leitura. Preços de referência nos EUA: confira na loja antes de comprar."; render(); }
 else (async () => {
   ds.textContent = "Carregando suas anotações…";
   try { db = await window.claude?.use?.("db"); } catch(e){ db = null; }
