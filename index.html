@@ -28,6 +28,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 header{padding-block:18px 6px}
 h1{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1.1;margin:0;text-wrap:balance;letter-spacing:.01em}
 .sub{color:var(--muted);font-size:.85rem;margin-top:4px}
+.swap{display:inline-block;margin-top:6px;font-size:.85rem;font-weight:600;color:var(--accent);text-decoration:none}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px 8px;display:grid;gap:8px}
 .bar>*,.row>.chips{min-width:0}
 .search{position:relative}
@@ -132,6 +133,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
     <div>
       <h1>Perfumes Masculinos EUA</h1>
       <div class="sub" id="sub">Preços regulares nos EUA · atualizado em 31/10/2026</div>
+      <a class="swap" id="swap" href="#">Ver versão feminina →</a>
     </div>
     <button class="btn add" id="addnovo" type="button" hidden>+ Novo item</button>
   </header>
@@ -758,6 +760,8 @@ async function removePhoto(id){
 }
 
 chips(); render();
+// link para a outra versão do catálogo: no app abre o outro artifact; no site, a outra pasta
+{ const sw = document.getElementById("swap"); sw.href = CONSULTA ? "femininos/" : "https://claude.ai/artifact/9VAcvhYosj3a31expxhh3C"; if (!CONSULTA) { sw.target = "_blank"; sw.rel = "noopener"; } }
 const ds = document.getElementById("dbstate");
 // no site público a linha de contagem sai, para sobrar tela no celular
 if (CONSULTA) { fotos = FOTOS; document.getElementById("count").hidden = true; ds.textContent = "Consulta somente leitura. Preços de referência nos EUA: confira na loja antes de comprar."; render(); }

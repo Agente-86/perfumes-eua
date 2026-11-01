@@ -1,0 +1,804 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Perfumes Femininos EUA</title><style>body{margin:0}</style></head><body>
+<title>Perfumes Femininos EUA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: uma coluna de "etiquetas de frasco" sob uma barra de busca fixa; o preço é o número dominante de cada etiqueta. */
+:root{
+  --bg:#F3F5F7; --card:#FFFFFF; --ink:#172033; --muted:#5B6678; --line:#DCE2EA;
+  --accent:#1F6B66; --accent-soft:#DDEFED; --manual:#B4530A; --manual-soft:#FCEBD7;
+  --warn:#9F2D2D; --warn-soft:#F8E1E1; --chip:#E8ECF1; --stamp:#8A5A12;
+  --display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body:"Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F141C; --card:#182030; --ink:#E7ECF3; --muted:#9AA6B8; --line:#2A3446;
+  --accent:#5CC2B8; --accent-soft:#163A39; --manual:#F0A35E; --manual-soft:#3A2614;
+  --warn:#F08A8A; --warn-soft:#3A1C1E; --chip:#222C3D; --stamp:#E0B565; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0F141C; --card:#182030; --ink:#E7ECF3; --muted:#9AA6B8; --line:#2A3446;
+  --accent:#5CC2B8; --accent-soft:#163A39; --manual:#F0A35E; --manual-soft:#3A2614;
+  --warn:#F08A8A; --warn-soft:#3A1C1E; --chip:#222C3D; --stamp:#E0B565; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 32px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:720px;margin:0 auto}
+header{padding-block:18px 6px}
+h1{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1.1;margin:0;text-wrap:balance;letter-spacing:.01em}
+.sub{color:var(--muted);font-size:.85rem;margin-top:4px}
+.swap{display:inline-block;margin-top:6px;font-size:.85rem;font-weight:600;color:var(--accent);text-decoration:none}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px 8px;display:grid;gap:8px}
+.bar>*,.row>.chips{min-width:0}
+.search{position:relative}
+.search input{width:100%;font:inherit;font-size:1.05rem;padding:13px 44px 13px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);outline:none}
+.search input:focus{border-color:var(--accent)}
+.search button{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--muted);font-size:1.3rem;width:36px;height:36px;border-radius:8px;cursor:pointer}
+/* botões quebram em mais de uma linha: no celular nenhum fica escondido fora da tela */
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:.82rem;padding:6px 11px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.m[aria-pressed="true"]{background:var(--manual);border-color:var(--manual);color:var(--card)}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.count{color:var(--muted);font-size:.82rem}
+select{font:inherit;font-size:.82rem;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.list{display:grid;gap:10px;margin-top:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px;cursor:pointer}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.top{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start}
+.house{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+/* carimbo de categoria (Clássico): moldura dupla e leve inclinação, ao lado da casa */
+.stamp{display:inline-block;margin-left:8px;padding:1px 6px;border:3px double var(--stamp);border-radius:5px;color:var(--stamp);
+  font-size:.62rem;letter-spacing:.16em;font-weight:700;line-height:1.3;transform:rotate(-5deg);vertical-align:1px}
+.stamp.dc{border-color:var(--warn);color:var(--warn)}
+.name{font-family:var(--display);font-size:1.25rem;font-weight:500;line-height:1.15;margin-top:2px;min-width:0;overflow-wrap:anywhere}
+.spec{font-size:.8rem;color:var(--muted);margin-top:3px;font-variant-numeric:tabular-nums}
+.price{text-align:right;font-variant-numeric:tabular-nums}
+.price .v{font-size:1.45rem;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+.price .v.none{font-size:.9rem;font-weight:500;color:var(--muted)}
+.price .per{font-size:.75rem;color:var(--muted);white-space:nowrap}
+.price .was{font-size:.72rem;color:var(--muted);text-decoration:line-through}
+.alts{display:flex;flex-direction:column;gap:2px;font-size:.84rem;font-variant-numeric:tabular-nums;margin-top:8px}
+.alts>span{white-space:nowrap}
+.top .pills{margin-top:8px}
+.alts b{font-weight:600}
+.alts .best{color:var(--accent);font-weight:600}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:.72rem;padding:3px 8px;border-radius:6px;background:var(--chip);color:var(--muted)}
+.pill.ok{background:var(--accent-soft);color:var(--accent)}
+.pill.man{background:var(--manual-soft);color:var(--manual);font-weight:600}
+.pill.bad{background:var(--warn-soft);color:var(--warn)}
+.more{border-top:1px solid var(--line);padding-top:10px;display:grid;gap:8px;font-size:.86rem;cursor:default}
+.kv{display:grid;grid-template-columns:7.5em 1fr;gap:4px 10px}
+.kv dt{color:var(--muted)} .kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+a{color:var(--accent)}
+.note{color:var(--muted);font-size:.82rem}
+form.man{display:grid;gap:8px;background:var(--manual-soft);border-radius:10px;padding:12px}
+form.man h3{margin:0;font-size:.9rem;color:var(--manual)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fields label{display:grid;gap:3px;font-size:.75rem;color:var(--muted)}
+.fields .wide{grid-column:1/-1}
+.fields input{font:inherit;font-size:1rem;padding:9px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);min-width:0;width:100%}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:inherit;font-size:.88rem;font-weight:600;border-radius:9px;padding:9px 14px;border:0;cursor:pointer;background:var(--manual);color:var(--card)}
+.btn.ghost{background:transparent;color:var(--manual);border:1px solid var(--manual)}
+.btn:disabled{opacity:.5;cursor:default}
+.msg{font-size:.8rem;color:var(--manual)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{font:inherit;font-size:.8rem;font-weight:600;border:0;border-radius:7px;padding:8px 4px;background:transparent;color:var(--muted);cursor:pointer}
+.seg button[aria-checked="true"]{background:var(--manual);color:var(--card)}
+ul.saved{margin:0;padding-left:18px;font-size:.82rem;display:grid;gap:2px}
+.alts .tag{font-size:.66rem;color:var(--manual);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-left:3px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.btn.add{background:var(--accent);white-space:nowrap;margin-top:2px}
+form.novo{background:var(--accent-soft);margin-top:6px}
+form.novo h3{color:var(--accent)}
+form.novo .btn{background:var(--accent)}
+form.novo .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+form.novo .msg{color:var(--accent)}
+.fields select{font-size:1rem;padding:9px 8px;width:100%}
+.fields small{color:var(--muted);font-size:.72rem}
+.dup{font-size:.8rem;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.dup.bad{border-color:var(--warn);color:var(--warn)}
+.dup ul{margin:4px 0 0;padding-left:18px}
+.sug{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px}
+.sug:empty{display:none}
+.sug button{font:inherit;font-size:.86rem;padding:8px 12px;border-radius:999px;border:1px solid var(--accent);background:var(--card);color:var(--accent);cursor:pointer;text-align:left;max-width:100%;overflow-wrap:anywhere}
+.sug button small{color:var(--muted);font-size:.75rem}
+.pill.novo{background:var(--accent);color:var(--card);font-weight:600}
+.thumb{display:block;width:84px;height:92px;object-fit:contain;border-radius:8px;background:var(--chip);margin:6px 0 0 auto}
+.photo{display:grid;gap:8px;justify-items:start}
+.photo img{display:block;max-width:100%;max-height:260px;object-fit:contain;border-radius:10px;background:var(--chip);cursor:zoom-in}
+.btn.foto{background:var(--accent)}
+.btn.foto.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.ask{display:grid;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--ink);font-size:.86rem}
+.ask p{margin:0}
+.nfwarn{color:var(--warn);font-size:.78rem}
+.nfprev{display:block;max-width:120px;max-height:140px;object-fit:contain;border-radius:8px;background:var(--card);margin-top:4px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(5,8,12,.94);display:flex;align-items:center;justify-content:center;padding:max(56px,env(safe-area-inset-top,0px)) 12px max(16px,env(safe-area-inset-bottom,0px))}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lb-x{position:absolute;top:calc(env(safe-area-inset-top,0px) + 8px);right:10px;width:44px;height:44px;border-radius:22px;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer}
+.lb-cap{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);text-align:center;color:#d8dee8;font-size:.85rem;padding:0 16px}
+.empty{text-align:center;color:var(--muted);padding:40px 10px}
+footer{color:var(--muted);font-size:.75rem;margin-top:22px;display:grid;gap:4px}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+@media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--muted)}}
+</style>
+
+<div class="wrap">
+  <header class="hdr">
+    <div>
+      <h1>Perfumes Femininos EUA</h1>
+      <div class="sub" id="sub">Preços regulares nos EUA · atualizado em 31/10/2026</div>
+      <a class="swap" id="swap" href="#">Ver versão masculina →</a>
+    </div>
+    <button class="btn add" id="addnovo" type="button" hidden>+ Novo item</button>
+  </header>
+  <div class="bar">
+    <div class="search">
+      <input id="q" type="search" placeholder="Casa, sigla ou perfume: ysl, mfk, delina…" autocomplete="off" aria-label="Buscar casa ou perfume">
+      <button id="clr" type="button" aria-label="Limpar busca" hidden>×</button>
+    </div>
+    <div class="chips" id="bands" role="group" aria-label="Faixa de preço"></div>
+    <div class="row">
+      <div class="chips" id="types" role="group" aria-label="Filtros"></div>
+      <select id="sort" aria-label="Ordenar">
+        <option value="rel">Ordem do catálogo</option>
+        <option value="asc">Menor preço</option>
+        <option value="desc">Maior preço</option>
+        <option value="per">Menor US$/100 ml</option>
+        <option value="az">Casa A–Z</option>
+      </select>
+    </div>
+    <div class="count" id="count"></div>
+  </div>
+  <div id="novo"></div>
+  <div class="list" id="list"></div>
+  <input type="file" id="fotoInput" accept="image/*" hidden>
+  <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <img alt="">
+    <button class="lb-x" type="button" aria-label="Fechar foto">×</button>
+    <div class="lb-cap"></div>
+  </div>
+  <footer>
+    <div>Lista de 31/10/2026, em coleta: preço regular só de fontes aceitas (Amazon.com vendido pela Amazon ou loja oficial da marca, Macy's, Nordstrom, Bloomingdale's e sites das marcas nos EUA); Jomashop e discounters só como promoção. Ano de lançamento, família e notas pela Fragrantica. Unissex de perfil feminino também entram. Celebridade abaixo de US$ 30 fica de fora.</div>
+    <div id="dbstate"></div>
+  </footer>
+</div>
+
+<script>
+const DATA = [{"id":1,"c":"Chanel","p":"N°5","k":"EDP","ml":35,"t":"Grife","f":"Floral aldeídico","n":"aldeídos; ylang-ylang; rosa; jasmim; sândalo; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1986,"cat":["Clássico"]},{"id":2,"c":"Chanel","p":"N°5","k":"EDP","ml":50,"t":"Grife","f":"Floral aldeídico","n":"aldeídos; ylang-ylang; rosa; jasmim; sândalo; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1986,"cat":["Clássico"]},{"id":3,"c":"Chanel","p":"N°5","k":"EDP","ml":100,"t":"Grife","f":"Floral aldeídico","n":"aldeídos; ylang-ylang; rosa; jasmim; sândalo; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1986,"cat":["Clássico"]},{"id":4,"c":"Chanel","p":"Coco Mademoiselle","k":"EDP","ml":35,"t":"Grife","f":"Chipre floral","n":"laranja; bergamota; rosa; jasmim; patchouli; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-611.html","bt":"","bd":"","fp":"","fd":"","a":2001,"cat":[]},{"id":5,"c":"Chanel","p":"Coco Mademoiselle","k":"EDP","ml":50,"t":"Grife","f":"Chipre floral","n":"laranja; bergamota; rosa; jasmim; patchouli; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-611.html","bt":"","bd":"","fp":"","fd":"","a":2001,"cat":[]},{"id":6,"c":"Chanel","p":"Coco Mademoiselle","k":"EDP","ml":100,"t":"Grife","f":"Chipre floral","n":"laranja; bergamota; rosa; jasmim; patchouli; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-611.html","bt":"","bd":"","fp":"","fd":"","a":2001,"cat":[]},{"id":7,"c":"Dior","p":"J'adore","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"ylang-ylang; rosa damascena; jasmim sambac; tuberosa","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1999,"cat":["Clássico"]},{"id":8,"c":"Dior","p":"J'adore","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"ylang-ylang; rosa damascena; jasmim sambac; tuberosa","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1999,"cat":["Clássico"]},{"id":9,"c":"Dior","p":"J'adore","k":"EDP","ml":100,"t":"Grife","f":"Floral","n":"ylang-ylang; rosa damascena; jasmim sambac; tuberosa","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1999,"cat":["Clássico"]},{"id":10,"c":"Dior","p":"J'adore","k":"EDP","ml":150,"t":"Grife","f":"Floral","n":"ylang-ylang; rosa damascena; jasmim sambac; tuberosa","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1999,"cat":["Clássico"]},{"id":11,"c":"Dior","p":"Miss Dior","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"rosa centifolia; lírio-do-vale; peônia; íris; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":12,"c":"Dior","p":"Miss Dior","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"rosa centifolia; lírio-do-vale; peônia; íris; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":13,"c":"Dior","p":"Miss Dior","k":"EDP","ml":100,"t":"Grife","f":"Floral","n":"rosa centifolia; lírio-do-vale; peônia; íris; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":14,"c":"Yves Saint Laurent","p":"Black Opium","k":"EDP","ml":30,"t":"Grife","f":"Oriental baunilha","n":"café; baunilha; flor de laranjeira; jasmim; pera","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-25324.html","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":15,"c":"Yves Saint Laurent","p":"Black Opium","k":"EDP","ml":50,"t":"Grife","f":"Oriental baunilha","n":"café; baunilha; flor de laranjeira; jasmim; pera","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-25324.html","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":16,"c":"Yves Saint Laurent","p":"Black Opium","k":"EDP","ml":90,"t":"Grife","f":"Oriental baunilha","n":"café; baunilha; flor de laranjeira; jasmim; pera","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-25324.html","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":17,"c":"Yves Saint Laurent","p":"Libre","k":"EDP","ml":30,"t":"Grife","f":"Oriental fougère","n":"lavanda; flor de laranjeira; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Libre-56077.html","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":18,"c":"Yves Saint Laurent","p":"Libre","k":"EDP","ml":50,"t":"Grife","f":"Oriental fougère","n":"lavanda; flor de laranjeira; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Libre-56077.html","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":19,"c":"Yves Saint Laurent","p":"Libre","k":"EDP","ml":90,"t":"Grife","f":"Oriental fougère","n":"lavanda; flor de laranjeira; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Libre-56077.html","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":20,"c":"Lancôme","p":"La Vie Est Belle","k":"EDP","ml":30,"t":"Grife","f":"Oriental gourmand","n":"íris; pralinê; baunilha; groselha negra; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Lancome/La-Vie-Est-Belle-14982.html","bt":"","bd":"","fp":"","fd":"","a":2012,"cat":[]},{"id":21,"c":"Lancôme","p":"La Vie Est Belle","k":"EDP","ml":50,"t":"Grife","f":"Oriental gourmand","n":"íris; pralinê; baunilha; groselha negra; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Lancome/La-Vie-Est-Belle-14982.html","bt":"","bd":"","fp":"","fd":"","a":2012,"cat":[]},{"id":22,"c":"Lancôme","p":"La Vie Est Belle","k":"EDP","ml":100,"t":"Grife","f":"Oriental gourmand","n":"íris; pralinê; baunilha; groselha negra; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Lancome/La-Vie-Est-Belle-14982.html","bt":"","bd":"","fp":"","fd":"","a":2012,"cat":[]},{"id":23,"c":"Carolina Herrera","p":"Good Girl","k":"EDP","ml":30,"t":"Grife","f":"Oriental floral","n":"tuberosa; jasmim; cacau; fava tonka; café","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Carolina-Herrera/Good-Girl-39681.html","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":24,"c":"Carolina Herrera","p":"Good Girl","k":"EDP","ml":50,"t":"Grife","f":"Oriental floral","n":"tuberosa; jasmim; cacau; fava tonka; café","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Carolina-Herrera/Good-Girl-39681.html","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":25,"c":"Carolina Herrera","p":"Good Girl","k":"EDP","ml":80,"t":"Grife","f":"Oriental floral","n":"tuberosa; jasmim; cacau; fava tonka; café","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Carolina-Herrera/Good-Girl-39681.html","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":26,"c":"Viktor&Rolf","p":"Flowerbomb","k":"EDP","ml":30,"t":"Grife","f":"Oriental floral","n":"jasmim; rosa; orquídea; freesia; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":27,"c":"Viktor&Rolf","p":"Flowerbomb","k":"EDP","ml":50,"t":"Grife","f":"Oriental floral","n":"jasmim; rosa; orquídea; freesia; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":28,"c":"Viktor&Rolf","p":"Flowerbomb","k":"EDP","ml":100,"t":"Grife","f":"Oriental floral","n":"jasmim; rosa; orquídea; freesia; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":29,"c":"Gucci","p":"Bloom","k":"EDP","ml":30,"t":"Grife","f":"Floral branco","n":"tuberosa; jasmim; rangoon creeper","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":30,"c":"Gucci","p":"Bloom","k":"EDP","ml":50,"t":"Grife","f":"Floral branco","n":"tuberosa; jasmim; rangoon creeper","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":31,"c":"Gucci","p":"Bloom","k":"EDP","ml":100,"t":"Grife","f":"Floral branco","n":"tuberosa; jasmim; rangoon creeper","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":32,"c":"Valentino","p":"Donna Born in Roma","k":"EDP","ml":30,"t":"Grife","f":"Oriental floral","n":"jasmim; baunilha bourbon; groselha negra; madeira de caxemira","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":33,"c":"Valentino","p":"Donna Born in Roma","k":"EDP","ml":50,"t":"Grife","f":"Oriental floral","n":"jasmim; baunilha bourbon; groselha negra; madeira de caxemira","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":34,"c":"Valentino","p":"Donna Born in Roma","k":"EDP","ml":100,"t":"Grife","f":"Oriental floral","n":"jasmim; baunilha bourbon; groselha negra; madeira de caxemira","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":35,"c":"Tom Ford","p":"Black Orchid","k":"EDP","ml":30,"t":"Grife","f":"Oriental floral","n":"trufa; orquídea negra; especiarias; patchouli; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":36,"c":"Tom Ford","p":"Black Orchid","k":"EDP","ml":50,"t":"Grife","f":"Oriental floral","n":"trufa; orquídea negra; especiarias; patchouli; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":37,"c":"Tom Ford","p":"Black Orchid","k":"EDP","ml":100,"t":"Grife","f":"Oriental floral","n":"trufa; orquídea negra; especiarias; patchouli; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":38,"c":"Tom Ford","p":"Lost Cherry","k":"EDP","ml":30,"t":"Nicho","f":"Oriental gourmand","n":"cereja; licor de cereja; amêndoa amarga; fava tonka","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":39,"c":"Tom Ford","p":"Lost Cherry","k":"EDP","ml":50,"t":"Nicho","f":"Oriental gourmand","n":"cereja; licor de cereja; amêndoa amarga; fava tonka","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":40,"c":"Tom Ford","p":"Lost Cherry","k":"EDP","ml":100,"t":"Nicho","f":"Oriental gourmand","n":"cereja; licor de cereja; amêndoa amarga; fava tonka","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":41,"c":"Maison Francis Kurkdjian","p":"Baccarat Rouge 540","k":"EDP","ml":35,"t":"Nicho","f":"Oriental floral","n":"açafrão; jasmim; ambroxan; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Baccarat-Rouge-540-33519.html","bt":"","bd":"","fp":"","fd":"","a":2015,"cat":[]},{"id":42,"c":"Maison Francis Kurkdjian","p":"Baccarat Rouge 540","k":"EDP","ml":70,"t":"Nicho","f":"Oriental floral","n":"açafrão; jasmim; ambroxan; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Baccarat-Rouge-540-33519.html","bt":"","bd":"","fp":"","fd":"","a":2015,"cat":[]},{"id":43,"c":"Maison Francis Kurkdjian","p":"Baccarat Rouge 540","k":"EDP","ml":200,"t":"Nicho","f":"Oriental floral","n":"açafrão; jasmim; ambroxan; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Baccarat-Rouge-540-33519.html","bt":"","bd":"","fp":"","fd":"","a":2015,"cat":[]},{"id":44,"c":"Parfums de Marly","p":"Delina","k":"EDP","ml":30,"t":"Nicho","f":"Floral","n":"rosa turca; lichia; ruibarbo; peônia; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Parfums-de-Marly/Delina-43871.html","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":45,"c":"Parfums de Marly","p":"Delina","k":"EDP","ml":75,"t":"Nicho","f":"Floral","n":"rosa turca; lichia; ruibarbo; peônia; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Parfums-de-Marly/Delina-43871.html","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":46,"c":"Le Labo","p":"Santal 33","k":"EDP","ml":50,"t":"Nicho","f":"Amadeirado","n":"sândalo; cedro; cardamomo; violeta; couro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":47,"c":"Le Labo","p":"Santal 33","k":"EDP","ml":100,"t":"Nicho","f":"Amadeirado","n":"sândalo; cedro; cardamomo; violeta; couro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":48,"c":"Byredo","p":"Gypsy Water","k":"EDP","ml":50,"t":"Nicho","f":"Amadeirado aromático","n":"bergamota; zimbro; pinho; baunilha; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2008,"cat":[]},{"id":49,"c":"Byredo","p":"Gypsy Water","k":"EDP","ml":100,"t":"Nicho","f":"Amadeirado aromático","n":"bergamota; zimbro; pinho; baunilha; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2008,"cat":[]},{"id":50,"c":"Kilian","p":"Love, Don't Be Shy","k":"EDP","ml":50,"t":"Nicho","f":"Oriental gourmand","n":"flor de laranjeira; marshmallow; baunilha; rosa","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2007,"cat":[]},{"id":51,"c":"Maison Margiela","p":"Replica Lazy Sunday Morning","k":"EDT","ml":30,"t":"Nicho","f":"Floral almiscarado","n":"lírio-do-vale; pera; íris; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2013,"cat":[]},{"id":52,"c":"Maison Margiela","p":"Replica Lazy Sunday Morning","k":"EDT","ml":100,"t":"Nicho","f":"Floral almiscarado","n":"lírio-do-vale; pera; íris; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2013,"cat":[]},{"id":53,"c":"Jo Malone London","p":"English Pear & Freesia","k":"Cologne","ml":30,"t":"Nicho","f":"Frutado floral","n":"pera; freesia; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":54,"c":"Jo Malone London","p":"English Pear & Freesia","k":"Cologne","ml":50,"t":"Nicho","f":"Frutado floral","n":"pera; freesia; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":55,"c":"Jo Malone London","p":"English Pear & Freesia","k":"Cologne","ml":100,"t":"Nicho","f":"Frutado floral","n":"pera; freesia; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":56,"c":"Chanel","p":"Chance Eau Tendre","k":"EDT","ml":35,"t":"Grife","f":"Floral frutado","n":"toranja; marmelo; jasmim; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":57,"c":"Chanel","p":"Chance Eau Tendre","k":"EDT","ml":50,"t":"Grife","f":"Floral frutado","n":"toranja; marmelo; jasmim; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":58,"c":"Chanel","p":"Chance Eau Tendre","k":"EDT","ml":100,"t":"Grife","f":"Floral frutado","n":"toranja; marmelo; jasmim; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":59,"c":"Chanel","p":"Coco","k":"EDP","ml":35,"t":"Grife","f":"Oriental especiado","n":"coentro; cravo; rosa; âmbar; opopânax","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1984,"cat":["Clássico"]},{"id":60,"c":"Chanel","p":"Coco","k":"EDP","ml":50,"t":"Grife","f":"Oriental especiado","n":"coentro; cravo; rosa; âmbar; opopânax","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1984,"cat":["Clássico"]},{"id":61,"c":"Chanel","p":"Coco","k":"EDP","ml":100,"t":"Grife","f":"Oriental especiado","n":"coentro; cravo; rosa; âmbar; opopânax","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1984,"cat":["Clássico"]},{"id":62,"c":"Chanel","p":"Gabrielle Essence","k":"EDP","ml":35,"t":"Grife","f":"Floral branco","n":"jasmim; tuberosa; ylang-ylang; flor de laranjeira","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":63,"c":"Chanel","p":"Gabrielle Essence","k":"EDP","ml":50,"t":"Grife","f":"Floral branco","n":"jasmim; tuberosa; ylang-ylang; flor de laranjeira","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":64,"c":"Chanel","p":"Gabrielle Essence","k":"EDP","ml":100,"t":"Grife","f":"Floral branco","n":"jasmim; tuberosa; ylang-ylang; flor de laranjeira","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":65,"c":"Dior","p":"Hypnotic Poison","k":"EDT","ml":30,"t":"Grife","f":"Oriental baunilha","n":"amêndoa; jasmim sambac; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1998,"cat":["Clássico"]},{"id":66,"c":"Dior","p":"Hypnotic Poison","k":"EDT","ml":50,"t":"Grife","f":"Oriental baunilha","n":"amêndoa; jasmim sambac; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1998,"cat":["Clássico"]},{"id":67,"c":"Dior","p":"Hypnotic Poison","k":"EDT","ml":100,"t":"Grife","f":"Oriental baunilha","n":"amêndoa; jasmim sambac; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1998,"cat":["Clássico"]},{"id":68,"c":"Dior","p":"Poison","k":"EDT","ml":50,"t":"Grife","f":"Oriental especiado","n":"ameixa; tuberosa; coentro; âmbar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1985,"cat":["Clássico"]},{"id":69,"c":"Dior","p":"Poison","k":"EDT","ml":100,"t":"Grife","f":"Oriental especiado","n":"ameixa; tuberosa; coentro; âmbar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1985,"cat":["Clássico"]},{"id":70,"c":"Dior","p":"Miss Dior Blooming Bouquet","k":"EDT","ml":30,"t":"Grife","f":"Floral","n":"peônia; rosa damascena; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":71,"c":"Dior","p":"Miss Dior Blooming Bouquet","k":"EDT","ml":50,"t":"Grife","f":"Floral","n":"peônia; rosa damascena; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":72,"c":"Dior","p":"Miss Dior Blooming Bouquet","k":"EDT","ml":100,"t":"Grife","f":"Floral","n":"peônia; rosa damascena; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":73,"c":"Yves Saint Laurent","p":"Mon Paris","k":"EDP","ml":30,"t":"Grife","f":"Chipre frutado","n":"morango; framboesa; peônia; datura; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":74,"c":"Yves Saint Laurent","p":"Mon Paris","k":"EDP","ml":50,"t":"Grife","f":"Chipre frutado","n":"morango; framboesa; peônia; datura; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":75,"c":"Yves Saint Laurent","p":"Mon Paris","k":"EDP","ml":90,"t":"Grife","f":"Chipre frutado","n":"morango; framboesa; peônia; datura; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":76,"c":"Lancôme","p":"Idôle","k":"EDP","ml":25,"t":"Grife","f":"Floral chipre","n":"rosa; jasmim; almíscar branco; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":77,"c":"Lancôme","p":"Idôle","k":"EDP","ml":50,"t":"Grife","f":"Floral chipre","n":"rosa; jasmim; almíscar branco; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":78,"c":"Lancôme","p":"Idôle","k":"EDP","ml":100,"t":"Grife","f":"Floral chipre","n":"rosa; jasmim; almíscar branco; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":79,"c":"Lancôme","p":"Trésor","k":"EDP","ml":30,"t":"Grife","f":"Oriental floral","n":"rosa; damasco; íris; baunilha; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1990,"cat":["Clássico"]},{"id":80,"c":"Lancôme","p":"Trésor","k":"EDP","ml":50,"t":"Grife","f":"Oriental floral","n":"rosa; damasco; íris; baunilha; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1990,"cat":["Clássico"]},{"id":81,"c":"Lancôme","p":"Trésor","k":"EDP","ml":100,"t":"Grife","f":"Oriental floral","n":"rosa; damasco; íris; baunilha; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1990,"cat":["Clássico"]},{"id":82,"c":"Carolina Herrera","p":"Very Good Girl","k":"EDP","ml":30,"t":"Grife","f":"Floral frutado","n":"groselha vermelha; rosa; vetiver; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":83,"c":"Carolina Herrera","p":"Very Good Girl","k":"EDP","ml":50,"t":"Grife","f":"Floral frutado","n":"groselha vermelha; rosa; vetiver; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":84,"c":"Carolina Herrera","p":"Very Good Girl","k":"EDP","ml":80,"t":"Grife","f":"Floral frutado","n":"groselha vermelha; rosa; vetiver; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":85,"c":"Carolina Herrera","p":"212 VIP Rosé","k":"EDP","ml":30,"t":"Grife","f":"Floral frutado","n":"champanhe rosé; pimenta rosa; flor de pêssego; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":86,"c":"Carolina Herrera","p":"212 VIP Rosé","k":"EDP","ml":50,"t":"Grife","f":"Floral frutado","n":"champanhe rosé; pimenta rosa; flor de pêssego; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":87,"c":"Carolina Herrera","p":"212 VIP Rosé","k":"EDP","ml":80,"t":"Grife","f":"Floral frutado","n":"champanhe rosé; pimenta rosa; flor de pêssego; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":88,"c":"Giorgio Armani","p":"My Way","k":"EDP","ml":30,"t":"Grife","f":"Floral branco","n":"bergamota; flor de laranjeira; tuberosa; baunilha; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":89,"c":"Giorgio Armani","p":"My Way","k":"EDP","ml":50,"t":"Grife","f":"Floral branco","n":"bergamota; flor de laranjeira; tuberosa; baunilha; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":90,"c":"Giorgio Armani","p":"My Way","k":"EDP","ml":90,"t":"Grife","f":"Floral branco","n":"bergamota; flor de laranjeira; tuberosa; baunilha; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":91,"c":"Giorgio Armani","p":"Sì","k":"EDP","ml":30,"t":"Grife","f":"Chipre frutado","n":"cassis; rosa de maio; baunilha; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2013,"cat":[]},{"id":92,"c":"Giorgio Armani","p":"Sì","k":"EDP","ml":50,"t":"Grife","f":"Chipre frutado","n":"cassis; rosa de maio; baunilha; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2013,"cat":[]},{"id":93,"c":"Giorgio Armani","p":"Sì","k":"EDP","ml":100,"t":"Grife","f":"Chipre frutado","n":"cassis; rosa de maio; baunilha; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2013,"cat":[]},{"id":94,"c":"Giorgio Armani","p":"Acqua di Gioia","k":"EDP","ml":30,"t":"Grife","f":"Aquático floral","n":"limão; hortelã; jasmim; cedro; açúcar mascavo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":95,"c":"Giorgio Armani","p":"Acqua di Gioia","k":"EDP","ml":50,"t":"Grife","f":"Aquático floral","n":"limão; hortelã; jasmim; cedro; açúcar mascavo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":96,"c":"Giorgio Armani","p":"Acqua di Gioia","k":"EDP","ml":100,"t":"Grife","f":"Aquático floral","n":"limão; hortelã; jasmim; cedro; açúcar mascavo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":97,"c":"Prada","p":"Paradoxe","k":"EDP","ml":30,"t":"Grife","f":"Floral âmbar","n":"flor de laranjeira; neroli; âmbar; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":98,"c":"Prada","p":"Paradoxe","k":"EDP","ml":50,"t":"Grife","f":"Floral âmbar","n":"flor de laranjeira; neroli; âmbar; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":99,"c":"Prada","p":"Paradoxe","k":"EDP","ml":90,"t":"Grife","f":"Floral âmbar","n":"flor de laranjeira; neroli; âmbar; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":100,"c":"Prada","p":"Candy","k":"EDP","ml":30,"t":"Grife","f":"Oriental baunilha","n":"caramelo; benjoim; almíscar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":101,"c":"Prada","p":"Candy","k":"EDP","ml":50,"t":"Grife","f":"Oriental baunilha","n":"caramelo; benjoim; almíscar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":102,"c":"Prada","p":"Candy","k":"EDP","ml":80,"t":"Grife","f":"Oriental baunilha","n":"caramelo; benjoim; almíscar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":103,"c":"Versace","p":"Bright Crystal","k":"EDT","ml":30,"t":"Grife","f":"Floral frutado","n":"romã; yuzu; peônia; lótus; magnólia; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":104,"c":"Versace","p":"Bright Crystal","k":"EDT","ml":50,"t":"Grife","f":"Floral frutado","n":"romã; yuzu; peônia; lótus; magnólia; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":105,"c":"Versace","p":"Bright Crystal","k":"EDT","ml":90,"t":"Grife","f":"Floral frutado","n":"romã; yuzu; peônia; lótus; magnólia; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":106,"c":"Versace","p":"Eros pour Femme","k":"EDP","ml":30,"t":"Grife","f":"Floral amadeirado","n":"limão; romã; jasmim sambac; peônia; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":107,"c":"Versace","p":"Eros pour Femme","k":"EDP","ml":50,"t":"Grife","f":"Floral amadeirado","n":"limão; romã; jasmim sambac; peônia; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":108,"c":"Versace","p":"Eros pour Femme","k":"EDP","ml":100,"t":"Grife","f":"Floral amadeirado","n":"limão; romã; jasmim sambac; peônia; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":109,"c":"Givenchy","p":"L'Interdit","k":"EDP","ml":35,"t":"Grife","f":"Floral branco","n":"flor de laranjeira; jasmim; tuberosa; patchouli; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":110,"c":"Givenchy","p":"L'Interdit","k":"EDP","ml":50,"t":"Grife","f":"Floral branco","n":"flor de laranjeira; jasmim; tuberosa; patchouli; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":111,"c":"Givenchy","p":"L'Interdit","k":"EDP","ml":80,"t":"Grife","f":"Floral branco","n":"flor de laranjeira; jasmim; tuberosa; patchouli; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":112,"c":"Rabanne","p":"Lady Million","k":"EDP","ml":30,"t":"Grife","f":"Floral amadeirado","n":"framboesa; neroli; jasmim; mel; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":113,"c":"Rabanne","p":"Lady Million","k":"EDP","ml":50,"t":"Grife","f":"Floral amadeirado","n":"framboesa; neroli; jasmim; mel; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":114,"c":"Rabanne","p":"Lady Million","k":"EDP","ml":80,"t":"Grife","f":"Floral amadeirado","n":"framboesa; neroli; jasmim; mel; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":115,"c":"Rabanne","p":"Fame","k":"EDP","ml":30,"t":"Grife","f":"Floral amadeirado","n":"manga; bergamota; jasmim; olíbano; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":116,"c":"Rabanne","p":"Fame","k":"EDP","ml":50,"t":"Grife","f":"Floral amadeirado","n":"manga; bergamota; jasmim; olíbano; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":117,"c":"Rabanne","p":"Fame","k":"EDP","ml":80,"t":"Grife","f":"Floral amadeirado","n":"manga; bergamota; jasmim; olíbano; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":118,"c":"Mugler","p":"Angel","k":"EDP","ml":25,"t":"Grife","f":"Oriental gourmand","n":"algodão-doce; caramelo; chocolate; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1992,"cat":["Clássico"]},{"id":119,"c":"Mugler","p":"Angel","k":"EDP","ml":50,"t":"Grife","f":"Oriental gourmand","n":"algodão-doce; caramelo; chocolate; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1992,"cat":["Clássico"]},{"id":120,"c":"Mugler","p":"Angel","k":"EDP","ml":100,"t":"Grife","f":"Oriental gourmand","n":"algodão-doce; caramelo; chocolate; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1992,"cat":["Clássico"]},{"id":121,"c":"Mugler","p":"Alien","k":"EDP","ml":30,"t":"Grife","f":"Amadeirado floral","n":"jasmim sambac; madeira de caxemira; âmbar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":122,"c":"Mugler","p":"Alien","k":"EDP","ml":60,"t":"Grife","f":"Amadeirado floral","n":"jasmim sambac; madeira de caxemira; âmbar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":123,"c":"Mugler","p":"Alien","k":"EDP","ml":90,"t":"Grife","f":"Amadeirado floral","n":"jasmim sambac; madeira de caxemira; âmbar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":124,"c":"Gucci","p":"Flora Gorgeous Gardenia","k":"EDP","ml":30,"t":"Grife","f":"Floral branco","n":"pera; gardênia; jasmim; açúcar mascavo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":125,"c":"Gucci","p":"Flora Gorgeous Gardenia","k":"EDP","ml":50,"t":"Grife","f":"Floral branco","n":"pera; gardênia; jasmim; açúcar mascavo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":126,"c":"Gucci","p":"Flora Gorgeous Gardenia","k":"EDP","ml":100,"t":"Grife","f":"Floral branco","n":"pera; gardênia; jasmim; açúcar mascavo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":127,"c":"Marc Jacobs","p":"Daisy","k":"EDT","ml":30,"t":"Grife","f":"Floral","n":"morango; violeta; jasmim; gardênia; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2007,"cat":[]},{"id":128,"c":"Marc Jacobs","p":"Daisy","k":"EDT","ml":50,"t":"Grife","f":"Floral","n":"morango; violeta; jasmim; gardênia; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2007,"cat":[]},{"id":129,"c":"Marc Jacobs","p":"Daisy","k":"EDT","ml":100,"t":"Grife","f":"Floral","n":"morango; violeta; jasmim; gardênia; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2007,"cat":[]},{"id":130,"c":"Marc Jacobs","p":"Perfect","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"ruibarbo; narciso; leite de amêndoa; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":131,"c":"Marc Jacobs","p":"Perfect","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"ruibarbo; narciso; leite de amêndoa; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":132,"c":"Marc Jacobs","p":"Perfect","k":"EDP","ml":100,"t":"Grife","f":"Floral","n":"ruibarbo; narciso; leite de amêndoa; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":133,"c":"Burberry","p":"Her","k":"EDP","ml":30,"t":"Grife","f":"Floral frutado","n":"morango; framboesa; jasmim; violeta; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":134,"c":"Burberry","p":"Her","k":"EDP","ml":50,"t":"Grife","f":"Floral frutado","n":"morango; framboesa; jasmim; violeta; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":135,"c":"Burberry","p":"Her","k":"EDP","ml":100,"t":"Grife","f":"Floral frutado","n":"morango; framboesa; jasmim; violeta; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":136,"c":"Dolce&Gabbana","p":"Light Blue","k":"EDT","ml":25,"t":"Grife","f":"Floral frutado","n":"limão siciliano; maçã; bambu; jasmim; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2001,"cat":[]},{"id":137,"c":"Dolce&Gabbana","p":"Light Blue","k":"EDT","ml":50,"t":"Grife","f":"Floral frutado","n":"limão siciliano; maçã; bambu; jasmim; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2001,"cat":[]},{"id":138,"c":"Dolce&Gabbana","p":"Light Blue","k":"EDT","ml":100,"t":"Grife","f":"Floral frutado","n":"limão siciliano; maçã; bambu; jasmim; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2001,"cat":[]},{"id":139,"c":"Dolce&Gabbana","p":"The One","k":"EDP","ml":30,"t":"Grife","f":"Oriental floral","n":"pêssego; lichia; lírio; baunilha; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":140,"c":"Dolce&Gabbana","p":"The One","k":"EDP","ml":50,"t":"Grife","f":"Oriental floral","n":"pêssego; lichia; lírio; baunilha; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":141,"c":"Dolce&Gabbana","p":"The One","k":"EDP","ml":75,"t":"Grife","f":"Oriental floral","n":"pêssego; lichia; lírio; baunilha; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2006,"cat":[]},{"id":142,"c":"Chloé","p":"Chloé","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"peônia; lichia; rosa; magnólia; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2008,"cat":[]},{"id":143,"c":"Chloé","p":"Chloé","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"peônia; lichia; rosa; magnólia; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2008,"cat":[]},{"id":144,"c":"Chloé","p":"Chloé","k":"EDP","ml":75,"t":"Grife","f":"Floral","n":"peônia; lichia; rosa; magnólia; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2008,"cat":[]},{"id":145,"c":"Jimmy Choo","p":"I Want Choo","k":"EDP","ml":40,"t":"Grife","f":"Oriental floral","n":"pêssego; mandarina; jasmim; baunilha; benjoim","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":146,"c":"Jimmy Choo","p":"I Want Choo","k":"EDP","ml":60,"t":"Grife","f":"Oriental floral","n":"pêssego; mandarina; jasmim; baunilha; benjoim","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":147,"c":"Jimmy Choo","p":"I Want Choo","k":"EDP","ml":100,"t":"Grife","f":"Oriental floral","n":"pêssego; mandarina; jasmim; baunilha; benjoim","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":148,"c":"Jimmy Choo","p":"Jimmy Choo","k":"EDP","ml":40,"t":"Grife","f":"Chipre frutado","n":"pera; mandarina; orquídea; caramelo; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":149,"c":"Jimmy Choo","p":"Jimmy Choo","k":"EDP","ml":60,"t":"Grife","f":"Chipre frutado","n":"pera; mandarina; orquídea; caramelo; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":150,"c":"Jimmy Choo","p":"Jimmy Choo","k":"EDP","ml":100,"t":"Grife","f":"Chipre frutado","n":"pera; mandarina; orquídea; caramelo; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":151,"c":"Ralph Lauren","p":"Romance","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"rosa; gengibre; lírio; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1998,"cat":["Clássico"]},{"id":152,"c":"Ralph Lauren","p":"Romance","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"rosa; gengibre; lírio; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1998,"cat":["Clássico"]},{"id":153,"c":"Ralph Lauren","p":"Romance","k":"EDP","ml":100,"t":"Grife","f":"Floral","n":"rosa; gengibre; lírio; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1998,"cat":["Clássico"]},{"id":154,"c":"Calvin Klein","p":"Eternity","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"freesia; lírio; rosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1988,"cat":["Clássico"]},{"id":155,"c":"Calvin Klein","p":"Eternity","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"freesia; lírio; rosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1988,"cat":["Clássico"]},{"id":156,"c":"Calvin Klein","p":"Eternity","k":"EDP","ml":100,"t":"Grife","f":"Floral","n":"freesia; lírio; rosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1988,"cat":["Clássico"]},{"id":157,"c":"Calvin Klein","p":"Obsession for Women","k":"EDP","ml":50,"t":"Grife","f":"Oriental especiado","n":"especiarias; baunilha; âmbar; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1985,"cat":["Clássico"]},{"id":158,"c":"Calvin Klein","p":"Obsession for Women","k":"EDP","ml":100,"t":"Grife","f":"Oriental especiado","n":"especiarias; baunilha; âmbar; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1985,"cat":["Clássico"]},{"id":159,"c":"Estée Lauder","p":"Beautiful","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"rosa; lírio; tuberosa; cravo; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1985,"cat":["Clássico"]},{"id":160,"c":"Estée Lauder","p":"Beautiful","k":"EDP","ml":75,"t":"Grife","f":"Floral","n":"rosa; lírio; tuberosa; cravo; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1985,"cat":["Clássico"]},{"id":161,"c":"Estée Lauder","p":"White Linen","k":"EDP","ml":30,"t":"Grife","f":"Floral aldeídico","n":"aldeídos; rosa; jasmim; lírio; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1978,"cat":["Clássico"]},{"id":162,"c":"Estée Lauder","p":"White Linen","k":"EDP","ml":60,"t":"Grife","f":"Floral aldeídico","n":"aldeídos; rosa; jasmim; lírio; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1978,"cat":["Clássico"]},{"id":163,"c":"Estée Lauder","p":"Youth-Dew","k":"EDP","ml":67,"t":"Grife","f":"Oriental especiado","n":"bálsamos; cravo; olíbano; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1953,"cat":["Clássico"]},{"id":164,"c":"Clinique","p":"Happy","k":"Perfume Spray","ml":30,"t":"Grife","f":"Cítrico floral","n":"laranja; bergamota; orquídea; lírio","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1997,"cat":["Clássico"]},{"id":165,"c":"Clinique","p":"Happy","k":"Perfume Spray","ml":50,"t":"Grife","f":"Cítrico floral","n":"laranja; bergamota; orquídea; lírio","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1997,"cat":["Clássico"]},{"id":166,"c":"Clinique","p":"Happy","k":"Perfume Spray","ml":100,"t":"Grife","f":"Cítrico floral","n":"laranja; bergamota; orquídea; lírio","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1997,"cat":["Clássico"]},{"id":167,"c":"Clinique","p":"Aromatics Elixir","k":"Perfume Spray","ml":45,"t":"Grife","f":"Chipre","n":"rosa; jasmim; patchouli; vetiver; musgo de carvalho","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1971,"cat":["Clássico"]},{"id":168,"c":"Clinique","p":"Aromatics Elixir","k":"Perfume Spray","ml":100,"t":"Grife","f":"Chipre","n":"rosa; jasmim; patchouli; vetiver; musgo de carvalho","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1971,"cat":["Clássico"]},{"id":169,"c":"Elizabeth Arden","p":"Red Door","k":"EDT","ml":30,"t":"Grife","f":"Floral","n":"rosa vermelha; ylang-ylang; orquídea; mel","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1989,"cat":["Clássico"]},{"id":170,"c":"Elizabeth Arden","p":"Red Door","k":"EDT","ml":50,"t":"Grife","f":"Floral","n":"rosa vermelha; ylang-ylang; orquídea; mel","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1989,"cat":["Clássico"]},{"id":171,"c":"Elizabeth Arden","p":"Red Door","k":"EDT","ml":100,"t":"Grife","f":"Floral","n":"rosa vermelha; ylang-ylang; orquídea; mel","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1989,"cat":["Clássico"]},{"id":172,"c":"Elizabeth Arden","p":"5th Avenue","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"lilás; tília; magnólia; âmbar; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1996,"cat":["Clássico"]},{"id":173,"c":"Elizabeth Arden","p":"5th Avenue","k":"EDP","ml":75,"t":"Grife","f":"Floral","n":"lilás; tília; magnólia; âmbar; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1996,"cat":["Clássico"]},{"id":174,"c":"Elizabeth Arden","p":"5th Avenue","k":"EDP","ml":125,"t":"Grife","f":"Floral","n":"lilás; tília; magnólia; âmbar; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1996,"cat":["Clássico"]},{"id":175,"c":"Guerlain","p":"Shalimar","k":"EDP","ml":30,"t":"Grife","f":"Oriental","n":"bergamota; íris; baunilha; fava tonka; opopânax","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1925,"cat":["Clássico"]},{"id":176,"c":"Guerlain","p":"Shalimar","k":"EDP","ml":50,"t":"Grife","f":"Oriental","n":"bergamota; íris; baunilha; fava tonka; opopânax","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1925,"cat":["Clássico"]},{"id":177,"c":"Guerlain","p":"Shalimar","k":"EDP","ml":90,"t":"Grife","f":"Oriental","n":"bergamota; íris; baunilha; fava tonka; opopânax","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1925,"cat":["Clássico"]},{"id":178,"c":"Guerlain","p":"Mitsouko","k":"EDP","ml":75,"t":"Grife","f":"Chipre frutado","n":"pêssego; rosa; musgo de carvalho; especiarias","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1919,"cat":["Clássico"]},{"id":179,"c":"Guerlain","p":"Mon Guerlain","k":"EDP","ml":30,"t":"Grife","f":"Oriental fougère","n":"lavanda; jasmim sambac; baunilha tahitensis; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":180,"c":"Guerlain","p":"Mon Guerlain","k":"EDP","ml":50,"t":"Grife","f":"Oriental fougère","n":"lavanda; jasmim sambac; baunilha tahitensis; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":181,"c":"Guerlain","p":"Mon Guerlain","k":"EDP","ml":100,"t":"Grife","f":"Oriental fougère","n":"lavanda; jasmim sambac; baunilha tahitensis; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":182,"c":"Hermès","p":"Twilly d'Hermès","k":"EDP","ml":30,"t":"Grife","f":"Oriental floral","n":"gengibre; tuberosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":183,"c":"Hermès","p":"Twilly d'Hermès","k":"EDP","ml":50,"t":"Grife","f":"Oriental floral","n":"gengibre; tuberosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":184,"c":"Hermès","p":"Twilly d'Hermès","k":"EDP","ml":85,"t":"Grife","f":"Oriental floral","n":"gengibre; tuberosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":185,"c":"Louis Vuitton","p":"Rose des Vents","k":"EDP","ml":100,"t":"Grife","f":"Floral","n":"rosa de maio; rosa turca; pimenta rosa; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":186,"c":"Coach","p":"Coach","k":"EDP","ml":30,"t":"Grife","f":"Floral","n":"framboesa; pera; rosa turca; camurça","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":187,"c":"Coach","p":"Coach","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"framboesa; pera; rosa turca; camurça","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":188,"c":"Coach","p":"Coach","k":"EDP","ml":90,"t":"Grife","f":"Floral","n":"framboesa; pera; rosa turca; camurça","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":189,"c":"Narciso Rodriguez","p":"For Her","k":"EDT","ml":30,"t":"Grife","f":"Floral almiscarado","n":"flor de laranjeira; osmanthus; almíscar; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2003,"cat":[]},{"id":190,"c":"Narciso Rodriguez","p":"For Her","k":"EDT","ml":50,"t":"Grife","f":"Floral almiscarado","n":"flor de laranjeira; osmanthus; almíscar; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2003,"cat":[]},{"id":191,"c":"Narciso Rodriguez","p":"For Her","k":"EDT","ml":100,"t":"Grife","f":"Floral almiscarado","n":"flor de laranjeira; osmanthus; almíscar; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2003,"cat":[]},{"id":192,"c":"Issey Miyake","p":"L'Eau d'Issey","k":"EDT","ml":25,"t":"Grife","f":"Floral aquático","n":"lótus; freesia; melão; lírio","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1992,"cat":["Clássico"]},{"id":193,"c":"Issey Miyake","p":"L'Eau d'Issey","k":"EDT","ml":50,"t":"Grife","f":"Floral aquático","n":"lótus; freesia; melão; lírio","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1992,"cat":["Clássico"]},{"id":194,"c":"Issey Miyake","p":"L'Eau d'Issey","k":"EDT","ml":100,"t":"Grife","f":"Floral aquático","n":"lótus; freesia; melão; lírio","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1992,"cat":["Clássico"]},{"id":195,"c":"Cacharel","p":"Anaïs Anaïs","k":"EDT","ml":30,"t":"Grife","f":"Floral","n":"lírio; jasmim; flor de laranjeira; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1978,"cat":["Clássico"]},{"id":196,"c":"Cacharel","p":"Anaïs Anaïs","k":"EDT","ml":50,"t":"Grife","f":"Floral","n":"lírio; jasmim; flor de laranjeira; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1978,"cat":["Clássico"]},{"id":197,"c":"Cacharel","p":"Anaïs Anaïs","k":"EDT","ml":100,"t":"Grife","f":"Floral","n":"lírio; jasmim; flor de laranjeira; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1978,"cat":["Clássico"]},{"id":198,"c":"Nina Ricci","p":"L'Air du Temps","k":"EDT","ml":30,"t":"Grife","f":"Floral especiado","n":"cravo; gardênia; jasmim; rosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1948,"cat":["Clássico"]},{"id":199,"c":"Nina Ricci","p":"L'Air du Temps","k":"EDT","ml":50,"t":"Grife","f":"Floral especiado","n":"cravo; gardênia; jasmim; rosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1948,"cat":["Clássico"]},{"id":200,"c":"Nina Ricci","p":"L'Air du Temps","k":"EDT","ml":100,"t":"Grife","f":"Floral especiado","n":"cravo; gardênia; jasmim; rosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1948,"cat":["Clássico"]},{"id":201,"c":"Kenzo","p":"Flower by Kenzo","k":"EDP","ml":30,"t":"Grife","f":"Floral atalcado","n":"papoula; violeta; rosa; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2000,"cat":[]},{"id":202,"c":"Kenzo","p":"Flower by Kenzo","k":"EDP","ml":50,"t":"Grife","f":"Floral atalcado","n":"papoula; violeta; rosa; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2000,"cat":[]},{"id":203,"c":"Kenzo","p":"Flower by Kenzo","k":"EDP","ml":100,"t":"Grife","f":"Floral atalcado","n":"papoula; violeta; rosa; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2000,"cat":[]},{"id":204,"c":"Jean Paul Gaultier","p":"Classique","k":"EDT","ml":30,"t":"Grife","f":"Oriental floral","n":"flor de laranjeira; rosa; gengibre; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1993,"cat":["Clássico"]},{"id":205,"c":"Jean Paul Gaultier","p":"Classique","k":"EDT","ml":50,"t":"Grife","f":"Oriental floral","n":"flor de laranjeira; rosa; gengibre; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1993,"cat":["Clássico"]},{"id":206,"c":"Jean Paul Gaultier","p":"Classique","k":"EDT","ml":100,"t":"Grife","f":"Oriental floral","n":"flor de laranjeira; rosa; gengibre; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1993,"cat":["Clássico"]},{"id":207,"c":"Giorgio Beverly Hills","p":"Giorgio","k":"EDT","ml":50,"t":"Grife","f":"Floral","n":"gardênia; tuberosa; jasmim; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1981,"cat":["Clássico"]},{"id":208,"c":"Giorgio Beverly Hills","p":"Giorgio","k":"EDT","ml":90,"t":"Grife","f":"Floral","n":"gardênia; tuberosa; jasmim; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1981,"cat":["Clássico"]},{"id":209,"c":"Chanel","p":"Allure","k":"EDP","ml":35,"t":"Grife","f":"Floral","n":"mandarina; rosa de maio; jasmim; baunilha; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1996,"cat":["Clássico"]},{"id":210,"c":"Chanel","p":"Allure","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"mandarina; rosa de maio; jasmim; baunilha; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1996,"cat":["Clássico"]},{"id":211,"c":"Chanel","p":"Allure","k":"EDP","ml":100,"t":"Grife","f":"Floral","n":"mandarina; rosa de maio; jasmim; baunilha; vetiver","r":null,"pr":null,"df":null,"u":"","s":"Linha antiga, ainda comercializada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1996,"cat":["Clássico"]},{"id":212,"c":"Maison Francis Kurkdjian","p":"Baccarat Rouge 540 Extrait","k":"Extrait","ml":70,"t":"Nicho","f":"Oriental floral","n":"amêndoa amarga; açafrão; jasmim; ambroxan; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2017,"cat":[]},{"id":213,"c":"Maison Francis Kurkdjian","p":"À la Rose","k":"EDP","ml":35,"t":"Nicho","f":"Floral","n":"rosa centifolia; rosa damascena; magnólia; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":214,"c":"Maison Francis Kurkdjian","p":"À la Rose","k":"EDP","ml":70,"t":"Nicho","f":"Floral","n":"rosa centifolia; rosa damascena; magnólia; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":215,"c":"Maison Francis Kurkdjian","p":"À la Rose","k":"EDP","ml":200,"t":"Nicho","f":"Floral","n":"rosa centifolia; rosa damascena; magnólia; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":216,"c":"Parfums de Marly","p":"Delina Exclusif","k":"Parfum","ml":75,"t":"Nicho","f":"Oriental floral","n":"lichia; toranja; rosa; incenso; oud","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":217,"c":"Parfums de Marly","p":"Valaya","k":"EDP","ml":30,"t":"Nicho","f":"Floral almiscarado","n":"aldeídos; flor de laranjeira; pêssego; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2023,"cat":[]},{"id":218,"c":"Parfums de Marly","p":"Valaya","k":"EDP","ml":75,"t":"Nicho","f":"Floral almiscarado","n":"aldeídos; flor de laranjeira; pêssego; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2023,"cat":[]},{"id":219,"c":"Tom Ford","p":"Bitter Peach","k":"EDP","ml":50,"t":"Nicho","f":"Oriental frutado","n":"pêssego; laranja sanguínea; rum; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":220,"c":"Tom Ford","p":"Bitter Peach","k":"EDP","ml":100,"t":"Nicho","f":"Oriental frutado","n":"pêssego; laranja sanguínea; rum; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":221,"c":"Tom Ford","p":"Rose Prick","k":"EDP","ml":50,"t":"Nicho","f":"Floral","n":"rosas; pimenta de Sichuan; cúrcuma; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":222,"c":"Le Labo","p":"Another 13","k":"EDP","ml":50,"t":"Nicho","f":"Almiscarado","n":"ambroxan; almíscar; musgo; jasmim","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":223,"c":"Le Labo","p":"Another 13","k":"EDP","ml":100,"t":"Nicho","f":"Almiscarado","n":"ambroxan; almíscar; musgo; jasmim","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":224,"c":"Byredo","p":"Blanche","k":"EDP","ml":50,"t":"Nicho","f":"Floral almiscarado","n":"aldeídos; rosa; peônia; violeta; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2009,"cat":[]},{"id":225,"c":"Byredo","p":"Blanche","k":"EDP","ml":100,"t":"Nicho","f":"Floral almiscarado","n":"aldeídos; rosa; peônia; violeta; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2009,"cat":[]},{"id":226,"c":"Byredo","p":"Mojave Ghost","k":"EDP","ml":50,"t":"Nicho","f":"Floral amadeirado","n":"sapodilla; magnólia; violeta; âmbar; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":227,"c":"Byredo","p":"Mojave Ghost","k":"EDP","ml":100,"t":"Nicho","f":"Floral amadeirado","n":"sapodilla; magnólia; violeta; âmbar; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":228,"c":"Maison Margiela","p":"Replica Bubble Bath","k":"EDT","ml":30,"t":"Nicho","f":"Almiscarado","n":"sabão; lavanda; rosa; coco; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":229,"c":"Maison Margiela","p":"Replica Bubble Bath","k":"EDT","ml":100,"t":"Nicho","f":"Almiscarado","n":"sabão; lavanda; rosa; coco; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":230,"c":"Kilian","p":"Good Girl Gone Bad","k":"EDP","ml":50,"t":"Nicho","f":"Floral","n":"jasmim; tuberosa; osmanthus; rosa de maio","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2012,"cat":[]},{"id":231,"c":"Creed","p":"Aventus for Her","k":"EDP","ml":30,"t":"Nicho","f":"Chipre frutado","n":"maçã verde; limão; rosa; patchouli; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":232,"c":"Creed","p":"Aventus for Her","k":"EDP","ml":75,"t":"Nicho","f":"Chipre frutado","n":"maçã verde; limão; rosa; patchouli; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":233,"c":"Creed","p":"Love in White","k":"EDP","ml":30,"t":"Nicho","f":"Floral","n":"casca de arroz; íris; magnólia; rosa; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":234,"c":"Creed","p":"Love in White","k":"EDP","ml":75,"t":"Nicho","f":"Floral","n":"casca de arroz; íris; magnólia; rosa; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":235,"c":"Initio","p":"Atomic Rose","k":"EDP","ml":90,"t":"Nicho","f":"Floral","n":"rosa; bergamota; baunilha; benjoim","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":236,"c":"Xerjoff","p":"Erba Pura","k":"EDP","ml":50,"t":"Nicho","f":"Oriental frutado","n":"laranja; limão; frutas; âmbar; almíscar; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":237,"c":"Xerjoff","p":"Erba Pura","k":"EDP","ml":100,"t":"Nicho","f":"Oriental frutado","n":"laranja; limão; frutas; âmbar; almíscar; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":238,"c":"Amouage","p":"Reflection Woman","k":"EDP","ml":100,"t":"Nicho","f":"Floral","n":"jasmim; neroli; rosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2007,"cat":[]},{"id":239,"c":"Frédéric Malle","p":"Portrait of a Lady","k":"EDP","ml":50,"t":"Nicho","f":"Oriental floral","n":"rosa turca; patchouli; incenso; groselha negra","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":240,"c":"Frédéric Malle","p":"Portrait of a Lady","k":"EDP","ml":100,"t":"Nicho","f":"Oriental floral","n":"rosa turca; patchouli; incenso; groselha negra","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":241,"c":"Diptyque","p":"Eau Rose","k":"EDT","ml":50,"t":"Nicho","f":"Floral","n":"rosa damascena; rosa centifolia; lichia; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2012,"cat":[]},{"id":242,"c":"Diptyque","p":"Eau Rose","k":"EDT","ml":100,"t":"Nicho","f":"Floral","n":"rosa damascena; rosa centifolia; lichia; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2012,"cat":[]},{"id":243,"c":"Jo Malone London","p":"Peony & Blush Suede","k":"Cologne","ml":30,"t":"Nicho","f":"Floral","n":"maçã vermelha; peônia; rosa; camurça","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2013,"cat":[]},{"id":244,"c":"Jo Malone London","p":"Peony & Blush Suede","k":"Cologne","ml":50,"t":"Nicho","f":"Floral","n":"maçã vermelha; peônia; rosa; camurça","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2013,"cat":[]},{"id":245,"c":"Jo Malone London","p":"Peony & Blush Suede","k":"Cologne","ml":100,"t":"Nicho","f":"Floral","n":"maçã vermelha; peônia; rosa; camurça","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2013,"cat":[]},{"id":246,"c":"Kayali","p":"Vanilla 28","k":"EDP","ml":50,"t":"Nicho","f":"Oriental baunilha","n":"baunilha; açúcar mascavo; fava tonka; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":247,"c":"Kayali","p":"Vanilla 28","k":"EDP","ml":100,"t":"Nicho","f":"Oriental baunilha","n":"baunilha; açúcar mascavo; fava tonka; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":248,"c":"Juliette Has a Gun","p":"Not a Perfume","k":"EDP","ml":50,"t":"Nicho","f":"Almiscarado","n":"ambroxan","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":249,"c":"Juliette Has a Gun","p":"Not a Perfume","k":"EDP","ml":100,"t":"Nicho","f":"Almiscarado","n":"ambroxan","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":250,"c":"Ex Nihilo","p":"Fleur Narcotique","k":"EDP","ml":50,"t":"Nicho","f":"Floral frutado","n":"bergamota; lichia; peônia; jasmim; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":251,"c":"Ex Nihilo","p":"Fleur Narcotique","k":"EDP","ml":100,"t":"Nicho","f":"Floral frutado","n":"bergamota; lichia; peônia; jasmim; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2014,"cat":[]},{"id":252,"c":"Mancera","p":"Roses Vanille","k":"EDP","ml":60,"t":"Nicho","f":"Oriental floral","n":"rosa; limão; baunilha; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":253,"c":"Mancera","p":"Roses Vanille","k":"EDP","ml":120,"t":"Nicho","f":"Oriental floral","n":"rosa; limão; baunilha; almíscar branco","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":254,"c":"Montale","p":"Roses Musk","k":"EDP","ml":100,"t":"Nicho","f":"Floral almiscarado","n":"rosa; jasmim; almíscar; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2009,"cat":[]},{"id":255,"c":"Lattafa","p":"Yara","k":"EDP","ml":100,"t":"Árabe","f":"Oriental gourmand","n":"orquídea; heliotrópio; frutas tropicais; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":256,"c":"Lattafa","p":"Yara Tous","k":"EDP","ml":100,"t":"Árabe","f":"Oriental frutado","n":"manga; coco; maracujá; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2023,"cat":[]},{"id":257,"c":"Lattafa","p":"Haya","k":"EDP","ml":100,"t":"Árabe","f":"Floral frutado","n":"frutas; flores brancas; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2023,"cat":[]},{"id":258,"c":"Lattafa","p":"Eclaire","k":"EDP","ml":100,"t":"Árabe","f":"Oriental gourmand","n":"caramelo; leite; mel; baunilha; pralinê","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2023,"cat":[]},{"id":259,"c":"Maison Alhambra","p":"Delilah","k":"EDP","ml":100,"t":"Árabe","f":"Floral frutado","n":"lichia; ruibarbo; rosa; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":260,"c":"Armaf","p":"Club de Nuit Women","k":"EDP","ml":105,"t":"Árabe","f":"Chipre floral","n":"laranja; bergamota; rosa; jasmim; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2015,"cat":[]},{"id":261,"c":"Armaf","p":"Club de Nuit Untold","k":"EDP","ml":105,"t":"Árabe","f":"Oriental floral","n":"açafrão; jasmim; âmbar; cedro","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":262,"c":"Afnan","p":"9am pour Femme","k":"EDP","ml":100,"t":"Árabe","f":"Floral frutado","n":"frutas vermelhas; flores; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":263,"c":"Al Haramain","p":"L'Aventure Femme","k":"EDP","ml":100,"t":"Árabe","f":"Floral","n":"flores brancas; frutas; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2015,"cat":[]},{"id":264,"c":"Victoria's Secret","p":"Bombshell","k":"EDP","ml":50,"t":"Varejo","f":"Floral frutado","n":"maracujá; peônia; baunilha orquídea; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":265,"c":"Victoria's Secret","p":"Bombshell","k":"EDP","ml":100,"t":"Varejo","f":"Floral frutado","n":"maracujá; peônia; baunilha orquídea; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":266,"c":"Victoria's Secret","p":"Tease","k":"EDP","ml":50,"t":"Varejo","f":"Oriental floral","n":"pera; frésia; gardênia; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":267,"c":"Victoria's Secret","p":"Tease","k":"EDP","ml":100,"t":"Varejo","f":"Oriental floral","n":"pera; frésia; gardênia; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2011,"cat":[]},{"id":268,"c":"Zara","p":"Red Temptation","k":"EDP","ml":30,"t":"Varejo","f":"Oriental floral","n":"jasmim; açafrão; âmbar; madeira","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":269,"c":"Zara","p":"Red Temptation","k":"EDP","ml":80,"t":"Varejo","f":"Oriental floral","n":"jasmim; açafrão; âmbar; madeira","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":270,"c":"Zara","p":"Gardenia","k":"EDP","ml":30,"t":"Varejo","f":"Floral branco","n":"gardênia; jasmim; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":271,"c":"Zara","p":"Gardenia","k":"EDP","ml":90,"t":"Varejo","f":"Floral branco","n":"gardênia; jasmim; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":272,"c":"Zara","p":"Wonder Rose","k":"EDT","ml":30,"t":"Varejo","f":"Floral","n":"rosa; frutas; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":273,"c":"Zara","p":"Wonder Rose","k":"EDT","ml":100,"t":"Varejo","f":"Floral","n":"rosa; frutas; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2016,"cat":[]},{"id":274,"c":"Abercrombie & Fitch","p":"Authentic Women","k":"EDP","ml":30,"t":"Varejo","f":"Floral amadeirado","n":"mandarina; pera; jasmim; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":275,"c":"Abercrombie & Fitch","p":"Authentic Women","k":"EDP","ml":50,"t":"Varejo","f":"Floral amadeirado","n":"mandarina; pera; jasmim; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":276,"c":"Abercrombie & Fitch","p":"Authentic Women","k":"EDP","ml":100,"t":"Varejo","f":"Floral amadeirado","n":"mandarina; pera; jasmim; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":277,"c":"Ariana Grande","p":"Cloud","k":"EDP","ml":30,"t":"Celebridade","f":"Oriental gourmand","n":"lavanda; pera; coco; pralinê; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Ariana-Grande/Cloud-50384.html","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":278,"c":"Ariana Grande","p":"Cloud","k":"EDP","ml":50,"t":"Celebridade","f":"Oriental gourmand","n":"lavanda; pera; coco; pralinê; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Ariana-Grande/Cloud-50384.html","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":279,"c":"Ariana Grande","p":"Cloud","k":"EDP","ml":100,"t":"Celebridade","f":"Oriental gourmand","n":"lavanda; pera; coco; pralinê; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"https://www.fragrantica.com/perfume/Ariana-Grande/Cloud-50384.html","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":280,"c":"Ariana Grande","p":"Sweet Like Candy","k":"EDP","ml":30,"t":"Celebridade","f":"Oriental gourmand","n":"amora; marshmallow; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":281,"c":"Ariana Grande","p":"Sweet Like Candy","k":"EDP","ml":50,"t":"Celebridade","f":"Oriental gourmand","n":"amora; marshmallow; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":282,"c":"Ariana Grande","p":"Sweet Like Candy","k":"EDP","ml":100,"t":"Celebridade","f":"Oriental gourmand","n":"amora; marshmallow; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":283,"c":"Ariana Grande","p":"R.E.M.","k":"EDP","ml":30,"t":"Celebridade","f":"Oriental gourmand","n":"pera; lavanda; marshmallow; figo; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":284,"c":"Ariana Grande","p":"R.E.M.","k":"EDP","ml":50,"t":"Celebridade","f":"Oriental gourmand","n":"pera; lavanda; marshmallow; figo; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":285,"c":"Ariana Grande","p":"R.E.M.","k":"EDP","ml":100,"t":"Celebridade","f":"Oriental gourmand","n":"pera; lavanda; marshmallow; figo; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2020,"cat":[]},{"id":286,"c":"Ariana Grande","p":"Thank U, Next","k":"EDP","ml":30,"t":"Celebridade","f":"Frutado gourmand","n":"pera; morango; coco; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":287,"c":"Ariana Grande","p":"Thank U, Next","k":"EDP","ml":50,"t":"Celebridade","f":"Frutado gourmand","n":"pera; morango; coco; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":288,"c":"Ariana Grande","p":"Thank U, Next","k":"EDP","ml":100,"t":"Celebridade","f":"Frutado gourmand","n":"pera; morango; coco; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2019,"cat":[]},{"id":289,"c":"Billie Eilish","p":"Eilish","k":"EDP","ml":30,"t":"Celebridade","f":"Oriental baunilha","n":"frutas vermelhas; cacau; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":290,"c":"Billie Eilish","p":"Eilish","k":"EDP","ml":50,"t":"Celebridade","f":"Oriental baunilha","n":"frutas vermelhas; cacau; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":291,"c":"Billie Eilish","p":"Eilish","k":"EDP","ml":100,"t":"Celebridade","f":"Oriental baunilha","n":"frutas vermelhas; cacau; baunilha; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":292,"c":"Billie Eilish","p":"Eilish No. 2","k":"EDP","ml":50,"t":"Celebridade","f":"Amadeirado especiado","n":"pimenta rosa; rosa; incenso; madeiras","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":293,"c":"Billie Eilish","p":"Eilish No. 2","k":"EDP","ml":100,"t":"Celebridade","f":"Amadeirado especiado","n":"pimenta rosa; rosa; incenso; madeiras","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":294,"c":"Britney Spears","p":"Fantasy","k":"EDP","ml":30,"t":"Celebridade","f":"Oriental gourmand","n":"lichia; kiwi; cupcake; chocolate branco; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":295,"c":"Britney Spears","p":"Fantasy","k":"EDP","ml":50,"t":"Celebridade","f":"Oriental gourmand","n":"lichia; kiwi; cupcake; chocolate branco; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":296,"c":"Britney Spears","p":"Fantasy","k":"EDP","ml":100,"t":"Celebridade","f":"Oriental gourmand","n":"lichia; kiwi; cupcake; chocolate branco; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":297,"c":"Jennifer Lopez","p":"Glow","k":"EDT","ml":30,"t":"Celebridade","f":"Floral almiscarado","n":"laranja; rosa; sândalo; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2002,"cat":[]},{"id":298,"c":"Jennifer Lopez","p":"Glow","k":"EDT","ml":50,"t":"Celebridade","f":"Floral almiscarado","n":"laranja; rosa; sândalo; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2002,"cat":[]},{"id":299,"c":"Jennifer Lopez","p":"Glow","k":"EDT","ml":100,"t":"Celebridade","f":"Floral almiscarado","n":"laranja; rosa; sândalo; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2002,"cat":[]},{"id":300,"c":"Sarah Jessica Parker","p":"Lovely","k":"EDP","ml":30,"t":"Celebridade","f":"Floral almiscarado","n":"lavanda; orquídea; patchouli; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":301,"c":"Sarah Jessica Parker","p":"Lovely","k":"EDP","ml":50,"t":"Celebridade","f":"Floral almiscarado","n":"lavanda; orquídea; patchouli; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":302,"c":"Sarah Jessica Parker","p":"Lovely","k":"EDP","ml":100,"t":"Celebridade","f":"Floral almiscarado","n":"lavanda; orquídea; patchouli; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2005,"cat":[]},{"id":303,"c":"Paris Hilton","p":"Paris Hilton","k":"EDP","ml":100,"t":"Celebridade","f":"Floral frutado","n":"melão; pêssego; maçã; mimosa; sândalo","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2004,"cat":[]},{"id":304,"c":"Beyoncé","p":"Heat","k":"EDP","ml":30,"t":"Celebridade","f":"Oriental floral","n":"flor de pêssego; magnólia; almíscar; âmbar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":305,"c":"Beyoncé","p":"Heat","k":"EDP","ml":50,"t":"Celebridade","f":"Oriental floral","n":"flor de pêssego; magnólia; almíscar; âmbar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":306,"c":"Beyoncé","p":"Heat","k":"EDP","ml":100,"t":"Celebridade","f":"Oriental floral","n":"flor de pêssego; magnólia; almíscar; âmbar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2010,"cat":[]},{"id":307,"c":"Fenty Beauty","p":"Fenty Eau de Parfum","k":"EDP","ml":75,"t":"Celebridade","f":"Floral amadeirado","n":"magnólia; rosa; tangerina; almíscar; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2021,"cat":[]},{"id":308,"c":"Kylie Cosmetics","p":"Cosmic Kylie Jenner","k":"EDP","ml":100,"t":"Celebridade","f":"Floral almiscarado","n":"pera; jasmim; almíscar; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2022,"cat":[]},{"id":309,"c":"Sabrina Carpenter","p":"Sweet Tooth","k":"EDP","ml":30,"t":"Celebridade","f":"Gourmand","n":"caramelo; chantili; coco; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2023,"cat":[]},{"id":310,"c":"Sabrina Carpenter","p":"Sweet Tooth","k":"EDP","ml":100,"t":"Celebridade","f":"Gourmand","n":"caramelo; chantili; coco; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Linha regular","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2023,"cat":[]},{"id":311,"c":"KKW Fragrance","p":"KKW Body","k":"EDP","ml":100,"t":"Celebridade","f":"Floral amadeirado","n":"pêssego; flores; sândalo; almíscar","r":null,"pr":null,"df":null,"u":"","s":"A verificar","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":2018,"cat":[]},{"id":312,"c":"Lancôme","p":"Poême","k":"EDP","ml":50,"t":"Grife","f":"Floral","n":"papoula azul; datura; mimosa; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1995,"cat":["DC Clássico"]},{"id":313,"c":"Lancôme","p":"Poême","k":"EDP","ml":100,"t":"Grife","f":"Floral","n":"papoula azul; datura; mimosa; baunilha","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1995,"cat":["DC Clássico"]},{"id":314,"c":"Givenchy","p":"Organza","k":"EDP","ml":50,"t":"Grife","f":"Oriental floral","n":"gardênia; noz-moscada; baunilha; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1996,"cat":["DC Clássico"]},{"id":315,"c":"Givenchy","p":"Organza","k":"EDP","ml":100,"t":"Grife","f":"Oriental floral","n":"gardênia; noz-moscada; baunilha; âmbar","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1996,"cat":["DC Clássico"]},{"id":316,"c":"Calvin Klein","p":"Escape for Women","k":"EDP","ml":50,"t":"Grife","f":"Frutado floral","n":"maçã; pêssego; camomila; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1991,"cat":["DC Clássico"]},{"id":317,"c":"Calvin Klein","p":"Escape for Women","k":"EDP","ml":100,"t":"Grife","f":"Frutado floral","n":"maçã; pêssego; camomila; almíscar","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1991,"cat":["DC Clássico"]},{"id":318,"c":"Lancôme","p":"Magie Noire","k":"EDT","ml":75,"t":"Grife","f":"Oriental chipre","n":"groselha negra; rosa; patchouli; musgo","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1978,"cat":["DC Clássico"]},{"id":319,"c":"Gucci","p":"Rush","k":"EDT","ml":30,"t":"Grife","f":"Chipre","n":"pêssego; gardênia; coentro; baunilha; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1999,"cat":["DC Clássico"]},{"id":320,"c":"Gucci","p":"Rush","k":"EDT","ml":50,"t":"Grife","f":"Chipre","n":"pêssego; gardênia; coentro; baunilha; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1999,"cat":["DC Clássico"]},{"id":321,"c":"Gucci","p":"Rush","k":"EDT","ml":75,"t":"Grife","f":"Chipre","n":"pêssego; gardênia; coentro; baunilha; patchouli","r":null,"pr":null,"df":null,"u":"","s":"Descontinuação reportada","o":"","nu":"","bt":"","bd":"","fp":"","fd":"","a":1999,"cat":["DC Clássico"]}];
+// versão de consulta (site público, gerado por build_consulta.py): sem edição, sem banco do claude.ai, fotos em fotos/
+const CONSULTA = true;
+const FOTOS = {};
+// abaixo de US$ 30 só há árabes e clássicos: aparecem em "Todas" e nos botões da categoria, sem faixa própria
+const BANDS = [["all","Todas"],["b150","> US$ 150"],["b100","US$ 100–150"],["b50","US$ 50–100"],["b30","US$ 30–50"]];
+const TIPOS = [["grife","Grife"],["nicho","Nicho"],["arabe","Árabe"],["varejo","Varejo"],["celeb","Celebridade"]];
+// categorias (coluna AC da planilha): somam-se ao tipo de casa; um clássico de grife aparece em Grife e em Clássicos
+const CATS = [["classico","Clássicos","Clássico"], ["dc","DC Clássicos","DC Clássico"]];
+// siglas e nomes alternativos das casas, para a busca (ysl, ck, pdm, mfk...)
+const ALIAS = {
+  "Yves Saint Laurent":"ysl saint laurent", "Calvin Klein":"ck", "Parfums de Marly":"pdm marly", "Maison Francis Kurkdjian":"mfk kurkdjian",
+  "Dolce&Gabbana":"d&g dg dolce gabbana", "Jean Paul Gaultier":"jpg gaultier", "Ralph Lauren":"rl", "Tom Ford":"tf", "Louis Vuitton":"lv",
+  "Giorgio Armani":"ga armani", "Emporio Armani":"ea armani", "Abercrombie & Fitch":"a&f af abercrombie", "American Eagle":"ae aeo",
+  "Banana Republic":"br", "Maison Margiela":"mm margiela martin", "Jimmy Choo":"jc", "Carolina Herrera":"ch", "Viktor&Rolf":"v&r vr viktor rolf",
+  "Tiziana Terenzi":"tt", "Narciso Rodriguez":"nr", "Michael Kors":"mk", "Montblanc":"mont blanc", "Rabanne":"paco rabanne",
+  "Mugler":"thierry mugler", "Kilian":"by kilian", "Dior":"christian dior cd", "Bvlgari":"bulgari", "Penhaligon's":"penhaligons",
+  "Boadicea the Victorious":"boadicea", "Jo Malone London":"jo malone", "Hugo Boss":"boss", "Salvatore Ferragamo":"ferragamo",
+  "Issey Miyake":"issey", "Estée Lauder":"el estee lauder", "Elizabeth Arden":"arden", "Victoria's Secret":"vs victorias", "Frédéric Malle":"fm malle frederic", "Juliette Has a Gun":"jhag juliette", "Ariana Grande":"ag ariana", "Sarah Jessica Parker":"sjp", "Jennifer Lopez":"jlo j.lo", "Fenty Beauty":"fenty rihanna", "Kylie Cosmetics":"kylie", "Maison Alhambra":"alhambra", "Giorgio Beverly Hills":"giorgio", "KKW Fragrance":"kkw kim kardashian", "Tommy Hilfiger":"tommy", "Tommy Bahama":"tommy", "Initio":"initio parfums prives", "Joop!":"joop"
+};
+// sigla digitada (ck, ysl...) não procura no meio das palavras ("ck" não acha "Black"): vale a sigla da casa ou o começo de uma palavra
+const SIGLAS = new Set(Object.values(ALIAS).flatMap(s => s.split(" ")).filter(w => w.length <= 3));
+// clássicos descontinuados: só aparecem pelo botão DC Clássico, fora das faixas de preço (o preço, quando há, é de colecionador)
+const isDC = p => (p.cat||[]).includes("DC Clássico");
+// tipos de preço manual: chave no documento de precos_manuais, rótulo do botão, rótulo do campo, exemplo de fonte, orientação
+const TIPOS_PRECO = [
+  ["regular", "Regular EUA", "Preço regular", "Ex.: Macy's, site da marca", "Só preço cheio: Amazon (vendido pela Amazon), Macy's, Sephora, Ulta, Bloomingdale's ou site da marca. Desconto, cupom e Jomashop vão em Promoção."],
+  ["promo", "Promoção EUA", "Preço promocional", "Ex.: Jomashop, Macy's com cupom", "Preço com desconto ou cupom, ou de discounters como a Jomashop."],
+  ["duty_free", "Duty free", "Preço duty free", "Ex.: Duty free do aeroporto de Miami", "Preço em loja duty free (aeroporto, travel retail)."]];
+const state = { q:"", band:"all", grife:false, nicho:false, arabe:false, varejo:false, celeb:false, classico:false, dc:false, semPreco:false, onlyManual:false, sort:"rel", open:null, mtype:"regular" };
+const ARABES = ["Lattafa","Maison Alhambra","Armaf","French Avenue","Rasasi","Al Haramain","Afnan","Ajmal","Swiss Arabian","Al Wataniah"];
+let manual = {};        // id -> {regular?, promo?, duty_free?}, cada um {preco, fonte, data, registrado_em}
+let manualCat = {}, manualNovos = {};   // anotações dos itens do catálogo (precos_manuais) e dos itens novos (itens_novos)
+let novos = [];         // itens registrados no app que ainda não estão na planilha; id "n…" até ganharem ID na planilha
+let fotos = {};         // ID do catálogo -> id do asset da foto (coleção fotos); itens novos guardam a foto no próprio documento
+let db = null, col = null, colNovos = null, colFotos = null, assets = null;
+
+const money = v => v==null ? "" : "US$ " + v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+const norm = s => (s||"").toString().normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const oz = ml => (ml/29.5735).toFixed(1).replace(".",",");
+const esc = s => (s??"").toString().replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtDate = iso => { if(!iso) return ""; const [y,m,d] = iso.slice(0,10).split("-"); return `${d}/${m}/${y}`; };
+
+// documentos antigos (até 27/10/2026) tinham só o preço regular, com preco/fonte/data no topo
+function fromDoc(x){
+  if (!x) return null;
+  const ok = e => e && typeof e.preco==="number", m = {};
+  if (ok(x.regular)) m.regular = x.regular;
+  else if (typeof x.preco==="number") m.regular = { preco:x.preco, fonte:x.fonte||"", data:x.data||"", registrado_em:x.registrado_em||"" };
+  if (ok(x.promo)) m.promo = x.promo;
+  if (ok(x.duty_free)) m.duty_free = x.duty_free;
+  return Object.keys(m).length ? m : null;
+}
+const firstType = m => (TIPOS_PRECO.find(([k]) => m && m[k]) || TIPOS_PRECO[0])[0];
+const idOf = s => /^\d+$/.test(s) ? +s : s;
+const findP = id => DATA.find(x => x.id===id) || novos.find(x => x.id===id);
+const today = () => new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
+const parseMoney = s => { const raw = s.trim().replace(/[^\d.,]/g,""); return Math.round(parseFloat(raw.includes(",") ? raw.replace(/\./g,"").replace(",", ".") : raw) * 100) / 100; };
+function toItem(id, x){
+  return { id, c:x.casa||"", p:x.perfume||"", k:x.concentracao||"", ml:x.ml, t:x.tipo||"Grife", f:"", n:"", r:null, pr:null, df:null,
+           u:"", s:"", o:x.obs||"", nu:"", bd:"", bt:"", fp:"", fd:"", novo:true, re:x.registrado_em||"", foto:x.foto||"" };
+}
+// foto do item; sem foto própria, usa a de outro tamanho do mesmo perfume e concentração
+const ownPhoto = p => p.novo ? p.foto : fotos[p.id];
+function photoOf(p){
+  const own = ownPhoto(p);
+  if (own) return { id: own, own: true };
+  const key = norm(`${p.c}|${p.p}|${p.k}`);
+  const sib = novos.concat(DATA).find(x => x.id!==p.id && ownPhoto(x) && norm(`${x.c}|${x.p}|${x.k}`)===key);
+  return sib ? { id: ownPhoto(sib), own: false, ml: sib.ml } : null;
+}
+const blobUrl = id => (CONSULTA ? "fotos/" : "/_blob/") + id;
+
+function view(p){
+  const m = manual[p.id];
+  const reg = m?.regular ? m.regular.preco : p.r;
+  const pr = m?.promo ? m.promo.preco : p.pr;
+  const df = m?.duty_free ? m.duty_free.preco : p.df;
+  const vals = [reg, pr, df].filter(v => v!=null);
+  const low = vals.length ? Math.min(...vals) : null;
+  const canal = low==null ? "" : (pr!=null && pr===low && low!==reg ? "Promo EUA" : (df!=null && df===low && low!==reg ? "Duty free" : "Regular"));
+  let band = "none";
+  if (isDC(p)) band = "dc";
+  else if (reg!=null) band = reg>150?"b150":reg>=100?"b100":reg>=50?"b50":reg>=30?"b30":"b0";
+  return { reg, pr, df, low, canal, band, per: reg!=null && p.ml && !isDC(p) ? reg/p.ml*100 : null, save: reg && low!=null ? 1-low/reg : 0, m };
+}
+
+function matches(p, v){
+  if (state.q){
+    const hay = norm(`${p.c} ${ALIAS[p.c]||""} ${p.p} ${p.k} ${p.ml||""}`);
+    const words = hay.split(/[\s\-]+/), sig = (ALIAS[p.c]||"").split(" ");
+    const hit = t => SIGLAS.has(t) ? sig.includes(t) || words.some(w => w.startsWith(t)) : hay.includes(t);
+    if (!norm(state.q).split(/\s+/).filter(Boolean).every(hit)) return false;
+  }
+  if (isDC(p) !== state.dc) return false;
+  if (!state.dc && state.band!=="all" && v.band!==state.band) return false;
+  const tipos = TIPOS.filter(([k]) => state[k]).map(([,l]) => l);
+  if (tipos.length && !tipos.includes(p.t)) return false;
+  if (CATS.some(([k,,c]) => state[k] && !(p.cat||[]).includes(c))) return false;
+  if (state.semPreco && v.reg!=null) return false;
+  if (state.onlyManual && !v.m && !p.novo) return false;
+  return true;
+}
+
+function originPill(p, v){
+  if (CONSULTA) return "";
+  if (p.novo) return `<span class="pill novo">NOVO · a revisar</span>` + (v.m?.regular ? originPill({}, v) : "");
+  if (v.m?.regular) return `<span class="pill man">MANUAL · ${esc(v.m.regular.fonte||"sem fonte")} · ${fmtDate(v.m.regular.data)}</span>`;
+  // verificado (data e fonte) e "sem preço" ficam só no cartão aberto; no resumo, apenas o que pede atenção
+  if (p.r!=null && !p.bd) return `<span class="pill">Fonte anterior · não revalidado</span>`;
+  return "";
+}
+function shortSrc(t){
+  t = t||"";
+  if (/Macy/.test(t)) return "Macy's";
+  if (/Loja oficial/.test(t)) return "loja oficial na Amazon";
+  if (/vendedor terceiro/.test(t)) return "Amazon, vendedor terceiro";
+  if (/Amazon/.test(t)) return "Amazon.com";
+  if (/Site oficial|Marca/.test(t)) return "site da marca";
+  if (/especializado/.test(t)) return "varejista especializado";
+  if (/Varejista grande/.test(t)) return "varejista EUA";
+  return t.length>28 ? t.slice(0,28)+"…" : t;
+}
+
+function card(p, v){
+  const open = state.open===p.id;
+  const sit = p.s && !/^Linha (regular|antiga)/.test(p.s) && !isDC(p) ? `<span class="pill ${/Descontinua|não confirmada/.test(p.s)?"bad":""}">${esc(p.s)}</span>` : "";
+  const alts = [], tag = k => v.m?.[k] ? `<span class="tag">manual</span>` : "";
+  // cada preço alternativo traz o desconto sobre o regular; o mais barato fica destacado
+  const off = x => v.reg && x < v.reg ? ` −${Math.round((1-x/v.reg)*100)}%` : "";
+  const best = x => v.low!=null && v.reg!=null && x===v.low && x < v.reg ? ' class="best"' : "";
+  if (v.pr!=null) alts.push(`<span${best(v.pr)}>Promo <b>${money(v.pr)}</b>${off(v.pr)}${tag("promo")}</span>`);
+  if (v.df!=null) alts.push(`<span${best(v.df)}>Duty free <b>${money(v.df)}</b>${off(v.df)}${tag("duty_free")}</span>`);
+  const manPills = [["promo","PROMO"],["duty_free","DUTY FREE"]].filter(([k]) => v.m?.[k])
+    .map(([k,l]) => `<span class="pill man">${l} MANUAL · ${esc(v.m[k].fonte||"sem fonte")} · ${fmtDate(v.m[k].data)}</span>`).join("");
+  const ph = photoOf(p);
+  const pills = originPill(p, v) + manPills + sit;
+  let more = "";
+  if (open){
+    more = `<div class="more" data-stop>
+      ${photoBlock(p, ph)}
+      <dl class="kv">
+        ${p.f?`<dt>Família</dt><dd>${esc(p.f)}</dd>`:""}
+        ${p.n?`<dt>Notas</dt><dd>${esc(p.n)}</dd>`:""}
+        ${p.a?`<dt>Lançamento</dt><dd>${esc(String(p.a))}</dd>`:""}
+        <dt>Tipo de casa</dt><dd>${esc(p.t)}</dd>
+        ${(p.cat||[]).length?`<dt>Categoria</dt><dd>${esc(p.cat.join(", "))}</dd>`:""}
+        ${p.s?`<dt>Situação</dt><dd>${esc(p.s)}</dd>`:""}
+        ${isDC(p)?`<dt>Preço</dt><dd>${p.r!=null?`${money(p.r)} (colecionador)${p.bt?` · ${esc(p.bt)}`:""}${p.bd?` (${esc(p.bd)})`:""}`:"Sem oferta encontrada"}</dd>`
+          :p.r!=null?`<dt>${CONSULTA?"Preço regular":"Verificado"}</dt><dd>${money(p.r)}${p.bt?` · ${esc(p.bt)}`:""}${p.bd?` (${esc(p.bd)})`:CONSULTA?"":" · fonte anterior, não revalidado"}</dd>`
+          :`<dt>${CONSULTA?"Preço regular":"Verificado"}</dt><dd>${CONSULTA?"Sem preço regular encontrado":"Sem preço regular verificado"}</dd>`}
+        ${p.u?`<dt>Fonte</dt><dd><a href="${esc(p.u)}" target="_blank" rel="noopener">abrir página do preço</a></dd>`:""}
+        ${p.pr!=null?`<dt>Promoção</dt><dd>${money(p.pr)}${p.fp?` · ${esc(p.fp)}`:""}</dd>`:""}
+        ${p.df!=null?`<dt>Duty free</dt><dd>${money(p.df)}${p.fd?` · ${esc(p.fd)}`:""}</dd>`:""}
+        ${p.o?`<dt>Observações</dt><dd>${esc(p.o)}</dd>`:""}
+        ${p.novo?`<dt>Registrado</dt><dd>${fmtDate(p.re)} pelo app; ainda não está na planilha</dd>`:""}
+      </dl>
+      ${p.novo?`<p class="note" style="margin:0">Peça ao Claude para incluir na planilha: ele confere o preço regular pelas regras do catálogo e preenche família e notas.</p>
+      <div class="btns"><button class="btn ghost" type="button" data-editnovo="${p.id}">Editar dados do item</button>
+        <button class="btn ghost" type="button" data-delnovo="${p.id}">Excluir item</button></div><div class="msg" id="nmsg-${p.id}"></div>`:""}
+      ${CONSULTA ? "" : manualForm(p, v)}
+    </div>`;
+  }
+  return `<article class="card" tabindex="0" data-id="${p.id}" aria-expanded="${open}">
+    <div class="top">
+      <div style="min-width:0">
+        <div class="house">${esc(p.c)}${(p.cat||[]).includes("Clássico")?`<span class="stamp">Clássico</span>`:""}${isDC(p)?`<span class="stamp dc">Descontinuado</span>`:""}</div>
+        <div class="name">${esc(p.p)}</div>
+        <div class="spec">${esc(p.k)}${p.ml?` · ${p.ml} ml (${oz(p.ml)} fl oz)`:""}${v.per!=null?` · ${money(v.per)}/100 ml`:""}</div>
+        ${alts.length?`<div class="alts">${alts.join("")}</div>`:""}
+        ${pills?`<div class="pills">${pills}</div>`:""}
+      </div>
+      <div class="price">
+        ${v.reg!=null?`<div class="v">${money(v.reg)}</div>`:`<div class="v none">sem preço</div>`}
+        ${v.m?.regular && p.r!=null && v.m.regular.preco!==p.r?`<div class="was">${money(p.r)}</div>`:""}
+        <div class="per">${isDC(p) ? (v.reg!=null ? "colecionador" : "") : "preço regular"}</div>
+        ${ph?`<img class="thumb" src="${blobUrl(ph.id)}" alt="" loading="lazy">`:""}
+      </div>
+    </div>
+    ${more}
+  </article>`;
+}
+
+function photoBlock(p, ph){
+  const alt = `${p.c} ${p.p} ${p.k}${p.ml?` ${p.ml} ml`:""}`;
+  const img = ph ? `<img src="${blobUrl(ph.id)}" alt="Foto: ${esc(alt)}" data-zoom="${ph.id}" data-cap="${esc(alt)}" loading="lazy">` : "";
+  const from = ph && !ph.own ? `<p class="note" style="margin:0">Foto da apresentação de ${ph.ml} ml do mesmo perfume.</p>` : "";
+  const own = ph && ph.own;
+  const btns = !assets ? "" : `<div class="btns">
+      <button class="btn foto${own?" ghost":""}" type="button" data-foto-add="${p.id}">${own?"Trocar foto":"Adicionar foto da caixa"}</button>
+      ${own?`<button class="btn foto ghost" type="button" data-foto-del="${p.id}">Remover foto</button>`:""}
+    </div><div class="msg" id="fmsg-${p.id}"></div>`;
+  if (!img && !btns) return "";
+  return `<div class="photo">${img}${img?`<p class="note" style="margin:0">Toque na foto para ampliar.</p>`:""}${from}${btns}</div>`;
+}
+
+function manualForm(p, v){
+  if (!col) return `<p class="note">Para registrar um preço manual, abra esta página logado no claude.ai. As anotações ficam salvas e aparecem em qualquer aparelho.</p>`;
+  const m = v.m || {}, t = state.mtype, e = m[t];
+  const [, , campo, exemplo, dica] = TIPOS_PRECO.find(([k]) => k===t);
+  const ref = t==="regular" ? p.r : t==="promo" ? p.pr : p.df;
+  const keep = t==="regular" && !p.novo ? `O preço verificado (${p.r!=null?money(p.r):"nenhum"}) continua guardado.` : "";
+  const saved = TIPOS_PRECO.filter(([k]) => m[k]).map(([k,l]) => `<li><b>${l}:</b> ${money(m[k].preco)} · ${esc(m[k].fonte||"sem fonte")} · ${fmtDate(m[k].data)}</li>`).join("");
+  return `<form class="man" data-id="${p.id}">
+    <h3>Registrar preço que você viu</h3>
+    ${saved?`<ul class="saved">${saved}</ul>`:""}
+    <div class="seg" role="radiogroup" aria-label="Tipo de preço">${TIPOS_PRECO.map(([k,l]) =>
+      `<button type="button" role="radio" data-mtype="${k}" aria-checked="${k===t}">${l}${m[k]?" ✓":""}</button>`).join("")}</div>
+    <div class="fields">
+      <label>${campo} (US$)<input name="preco" inputmode="decimal" required placeholder="${ref!=null?String(ref).replace(".",","):"0,00"}" value="${e?String(e.preco).replace(".",","):""}"></label>
+      <label>Data<input name="data" type="date" required value="${e?esc(e.data):today()}"></label>
+      <label class="wide">Onde viu (fonte)<input name="fonte" maxlength="120" placeholder="${exemplo}" value="${e?esc(e.fonte):""}"></label>
+    </div>
+    <p class="note" style="margin:0">${dica}</p>
+    <div class="btns">
+      <button class="btn" type="submit">${e?"Atualizar":"Salvar"} ${campo.toLowerCase()}</button>
+      ${e?`<button class="btn ghost" type="button" data-del="${p.id}">Remover</button>`:""}
+    </div>
+    <div class="msg" id="msg-${p.id}">${e?`Registrado em ${fmtDate(e.registrado_em)}. ${keep}`:""}</div>
+  </form>`;
+}
+
+function render(){
+  const items = novos.concat(DATA).map(p => [p, view(p)]).filter(([p,v]) => matches(p,v));
+  const s = state.sort;
+  if (s==="asc"||s==="desc"||s==="per"){
+    const key = s==="per" ? (x=>x[1].per) : (x=>x[1].reg);
+    items.sort((a,b)=>{ const ka=key(a), kb=key(b); if(ka==null) return 1; if(kb==null) return -1; return s==="desc"? kb-ka : ka-kb; });
+  } else if (s==="az"){
+    items.sort((a,b)=> a[0].c.localeCompare(b[0].c,"pt") || a[0].p.localeCompare(b[0].p,"pt") || a[0].ml-b[0].ml);
+  }
+  const withPrice = items.filter(x=>x[1].reg!=null).length;
+  document.getElementById("count").textContent = `${items.length} ${items.length===1?"apresentação":"apresentações"} · ${withPrice} com ${state.dc ? "preço de colecionador" : "preço regular"}`;
+  document.getElementById("list").innerHTML = items.length ? items.map(([p,v])=>card(p,v)).join("")
+    : `<div class="empty">Nada encontrado.<br>Confira a grafia ou limpe os filtros.</div>`;
+  const nMan = new Set([...Object.keys(manual), ...novos.map(x => x.id)]).size;
+  const mc = document.querySelector('.chip.m'); if (mc) mc.textContent = `Anotados${nMan?` (${nMan})`:""}`;
+}
+
+function chips(){
+  document.getElementById("bands").innerHTML = BANDS.map(([k,l]) => `<button type="button" class="chip" data-band="${k}" aria-pressed="${state.band===k}">${l}</button>`).join("");
+  // Sem preço e Anotados são referência do dono: não aparecem no site público
+  const t = [...TIPOS, ...CATS.map(([k,l]) => [k,l]), ...(CONSULTA ? [] : [["semPreco","Sem preço"], ["onlyManual","Anotados"]])];
+  document.getElementById("types").innerHTML = t.map(([k,l]) => `<button type="button" class="chip${k==="onlyManual"?" m":""}" data-flag="${k}" aria-pressed="${state[k]}">${l}</button>`).join("");
+}
+
+const qEl = document.getElementById("q"), clr = document.getElementById("clr");
+qEl.addEventListener("input", () => { state.q = qEl.value; clr.hidden = !qEl.value; state.open=null; render(); });
+clr.addEventListener("click", () => { qEl.value=""; state.q=""; clr.hidden=true; render(); qEl.focus(); });
+document.getElementById("sort").addEventListener("change", e => { state.sort=e.target.value; render(); });
+document.getElementById("bands").addEventListener("click", e => { const b=e.target.closest("[data-band]"); if(!b) return; state.band=b.dataset.band; chips(); render(); });
+document.getElementById("types").addEventListener("click", e => { const b=e.target.closest("[data-flag]"); if(!b) return; const k=b.dataset.flag; state[k]=!state[k]; chips(); render(); });
+
+const list = document.getElementById("list");
+list.addEventListener("click", e => {
+  if (e.target.closest("[data-stop]") || e.target.closest("a")) {
+    const del = e.target.closest("[data-del]");
+    if (del) removeManual(idOf(del.dataset.del));
+    const mt = e.target.closest("[data-mtype]");
+    if (mt) { state.mtype = mt.dataset.mtype; render(); list.querySelector(`[data-mtype="${state.mtype}"]`)?.focus(); }
+    const ed = e.target.closest("[data-editnovo]");
+    if (ed) openNovo(findP(ed.dataset.editnovo));
+    const z = e.target.closest("[data-zoom]");
+    if (z) openLightbox(z.dataset.zoom, z.dataset.cap);
+    const fa = e.target.closest("[data-foto-add]");
+    if (fa) { fotoTarget = idOf(fa.dataset.fotoAdd); fotoInput.value = ""; fotoInput.click(); }
+    const fd = e.target.closest("[data-foto-del]");
+    if (fd) removePhoto(idOf(fd.dataset.fotoDel));
+    const dn = e.target.closest("[data-delnovo]");
+    if (dn) deleteNovo(dn.dataset.delnovo);
+    return;
+  }
+  const c = e.target.closest(".card"); if(!c) return;
+  const id = idOf(c.dataset.id); state.open = state.open===id ? null : id; state.mtype = firstType(manual[id]); render();
+  const el = list.querySelector(`[data-id="${id}"]`); if (el && state.open===id) el.scrollIntoView({block:"nearest"});
+});
+list.addEventListener("keydown", e => { if ((e.key==="Enter"||e.key===" ") && e.target.classList.contains("card")) { e.preventDefault(); e.target.click(); } });
+list.addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, id = idOf(f.dataset.id), p = findP(id);
+  const msg = document.getElementById("msg-"+id);
+  const preco = parseMoney(f.preco.value);
+  if (!(preco>0)) { msg.textContent = "Digite o preço em dólares, por exemplo 129,90."; return; }
+  const btn = f.querySelector("button[type=submit]"); btn.disabled = true; msg.textContent = "Salvando…";
+  const m = { ...manual[id], [state.mtype]: { preco, fonte:f.fonte.value.trim(), data:f.data.value, registrado_em:new Date().toISOString() } };
+  try { await saveManual(p, m); manual[id] = m; render(); }
+  catch(err){ btn.disabled=false; msg.textContent = saveError(err); }
+});
+const saveError = err => err && err.code==="invalid_argument" ? "Você não tem permissão para salvar nesta página." : "Não foi possível salvar agora. Tente de novo em instantes.";
+// catálogo: um documento por perfume em precos_manuais (doc id = ID), com um campo para cada tipo de preço anotado
+function toDoc(p, m){
+  const doc = { id:p.id, casa:p.c, perfume:p.p, concentracao:p.k, ml:p.ml, verificado:p.r };
+  TIPOS_PRECO.forEach(([k]) => { if (m[k]) doc[k] = m[k]; });
+  return doc;
+}
+// item novo: os dados do item e os preços anotados ficam juntos no documento de itens_novos
+function novoDoc(p, m){
+  const doc = { casa:p.c, perfume:p.p, concentracao:p.k, ml:p.ml, tipo:p.t, obs:p.o, registrado_em:p.re };
+  if (p.foto) doc.foto = p.foto;
+  TIPOS_PRECO.forEach(([k]) => { if (m && m[k]) doc[k] = m[k]; });
+  return doc;
+}
+const saveManual = (p, m) => p.novo ? colNovos.doc(p.id).set(novoDoc(p, m)) : (m ? col.doc(String(p.id)).set(toDoc(p, m)) : col.doc(String(p.id)).delete());
+async function removeManual(id){
+  const msg = document.getElementById("msg-"+id), p = findP(id);
+  const m = { ...manual[id] }; delete m[state.mtype];
+  const rest = Object.keys(m).length ? m : null;
+  try {
+    await saveManual(p, rest);
+    if (rest) manual[id] = rest; else delete manual[id];
+    state.mtype = firstType(rest); render();
+  }
+  catch(err){ if (msg) msg.textContent = "Não foi possível remover agora. Tente de novo."; }
+}
+
+// ---------- item novo ----------
+const novoBox = document.getElementById("novo");
+let editing = null;     // id do item novo em edição, ou null para um item novo
+function openNovo(p){
+  editing = p ? p.id : null;
+  const v = (k, d="") => p ? esc(p[k]) : d;
+  novoBox.innerHTML = `<form class="man novo" id="fnovo" novalidate>
+    <h3>${p?"Editar item novo":"Novo item para o catálogo"}</h3>
+    <div class="fields">
+      <label class="wide">Casa<input name="casa" maxlength="60" autocomplete="off" autocapitalize="words" value="${v("c")}" placeholder="Digite: dior, lattafa…"></label>
+      <div class="sug" data-for="casa" role="listbox" aria-label="Casas do catálogo"></div>
+      <label class="wide">Perfume<input name="perfume" maxlength="80" autocomplete="off" autocapitalize="words" value="${v("p")}" placeholder="Digite: sauvage, khamrah…"></label>
+      <div class="sug" data-for="perfume" role="listbox" aria-label="Perfumes do catálogo"></div>
+      <label>Concentração<input name="conc" maxlength="30" autocomplete="off" value="${v("k")}" placeholder="EDT, EDP…"></label>
+      <label>Volume (ml)<input name="ml" inputmode="numeric" maxlength="5" value="${p?p.ml:""}" placeholder="100"><small id="nz">Confira o tamanho no rótulo americano</small></label>
+      <div class="sug" data-for="conc" role="listbox" aria-label="Concentrações"></div>
+      <label>Tipo de casa<select name="tipo">${TIPOS.map(([,t]) => t).map(t => `<option${p&&p.t===t?" selected":""}>${t}</option>`).join("")}</select></label>
+    </div>
+    <div id="dups"></div>
+    ${p?"":`<div class="fields">
+      <label>Preço que viu (opcional)<select name="ptipo">${TIPOS_PRECO.map(([k,,c]) => `<option value="${k}">${c}</option>`).join("")}</select></label>
+      <label>US$<input name="preco" inputmode="decimal" placeholder="0,00"></label>
+      <label>Data<input name="data" type="date" value="${today()}"></label>
+      <label>Onde viu (fonte)<input name="fonte" maxlength="120" placeholder="Ex.: Macy's"></label>
+    </div>`}
+    ${p || !assets ? "" : `<div class="fields"><label class="wide">Foto da caixa (opcional)<input name="foto" type="file" accept="image/*">
+      <img class="nfprev" id="nfprev" alt="Prévia da foto" hidden><span class="nfwarn" id="nfwarn"></span></label></div>`}
+    <div class="fields"><label class="wide">Observação (opcional)<input name="obs" maxlength="200" value="${v("o")}" placeholder="Ex.: lançamento, vi na Sephora do shopping"></label></div>
+    <div class="btns"><button class="btn" type="submit">${p?"Salvar alterações":"Salvar item"}</button><button class="btn ghost" type="button" data-cancel>Cancelar</button></div>
+    <div class="msg" id="msg-novo"></div>
+  </form>`;
+  const f = document.getElementById("fnovo");
+  if (p) { f.tipo.dataset.manual = "1"; checkNovo(f); }
+  scrollBelowBar(novoBox);
+  f.casa.focus({preventScroll:true});
+}
+function closeNovo(){ novoBox.innerHTML = ""; editing = null; }
+// a barra de busca é fixa: rola até o elemento ficar logo abaixo dela
+function scrollBelowBar(el){
+  if (!el) return;
+  const bar = document.querySelector(".bar").getBoundingClientRect().bottom;
+  window.scrollTo({ top: window.scrollY + el.getBoundingClientRect().top - bar - 8, behavior:"smooth" });
+}
+// avisa sobre itens parecidos e devolve o item idêntico (casa, perfume, concentração e ml), se houver
+function checkNovo(f){
+  const c = norm(f.casa.value.trim()), toks = norm(f.perfume.value.trim()).split(/\s+/).filter(Boolean);
+  const k = norm(f.conc.value.trim()), ml = +f.ml.value.replace(/\D/g,"");
+  document.getElementById("nz").textContent = ml ? `${oz(ml)} fl oz no rótulo americano` : "Confira o tamanho no rótulo americano";
+  const box = document.getElementById("dups");
+  if (c.length<2 || !toks.length){ box.innerHTML = ""; return null; }
+  const sim = novos.concat(DATA).filter(x => x.id!==editing && (norm(x.c).includes(c) || c.includes(norm(x.c))) && toks.every(t => norm(x.p).includes(t)));
+  const exact = sim.find(x => norm(x.c)===c && norm(x.p)===toks.join(" ") && norm(x.k)===k && x.ml===ml);
+  box.innerHTML = sim.length ? `<div class="dup${exact?" bad":""}"><b>${exact?"Este item já está no catálogo:":"Já no catálogo, parecidos:"}</b><ul>${
+    sim.slice(0,6).map(x => `<li>${esc(x.c)} ${esc(x.p)} ${esc(x.k)} ${x.ml} ml${x.novo?" (novo, ainda no app)":` (ID ${x.id})`}</li>`).join("")}${sim.length>6?`<li>e mais ${sim.length-6}</li>`:""}</ul></div>` : "";
+  return exact;
+}
+// sugestões enquanto digita (botões abaixo do campo; o <datalist> nativo não abre no app do celular)
+const uniq = a => [...new Set(a.filter(Boolean))];
+function rank(opts, q, key = o => o.v){
+  const starts = [], has = [];
+  opts.forEach(o => { const k = norm(key(o)); if (!q || k.startsWith(q)) starts.push(o); else if (k.includes(q)) has.push(o); });
+  const az = (a,b) => key(a).localeCompare(key(b),"pt");
+  return starts.sort(az).concat(has.sort(az));
+}
+const SUG = {
+  casa: f => {
+    const q = norm(f.casa.value.trim()); if (!q) return [];
+    return rank(uniq(novos.concat(DATA).map(x => x.c).concat(ARABES)).map(c => ({ v:c, l:esc(c) })), q).slice(0, 8);
+  },
+  perfume: f => {
+    const c = norm(f.casa.value.trim()), q = norm(f.perfume.value.trim()), toks = q.split(/\s+/).filter(Boolean);
+    if (!c && !q) return [];
+    const seen = new Map();
+    novos.concat(DATA).forEach(x => {
+      if (c && !norm(x.c).includes(c)) return;
+      if (!toks.every(t => norm(x.p).includes(t))) return;
+      const k = norm(x.c) + "|" + norm(x.p);
+      if (!seen.has(k)) seen.set(k, { v:x.p, casa:x.c, l: esc(x.p) + (c ? "" : ` <small>${esc(x.c)}</small>`) });
+    });
+    return rank([...seen.values()], toks[0] || "").slice(0, 10);
+  },
+  conc: f => rank(uniq(DATA.map(x => x.k)).map(k => ({ v:k, l:esc(k) })), norm(f.conc.value.trim())).slice(0, 10),
+};
+function showSug(f, name){
+  f.querySelectorAll(".sug").forEach(box => {
+    if (box.dataset.for !== name) { box.innerHTML = ""; return; }
+    const opts = SUG[name](f), typed = norm(f[name].value.trim());
+    // nada a sugerir quando o texto já é exatamente a única opção
+    box.innerHTML = opts.length===1 && norm(opts[0].v)===typed ? "" :
+      opts.map((o, i) => `<button type="button" role="option" data-pick="${name}" data-i="${i}">${o.l}</button>`).join("");
+    box._opts = opts;
+  });
+}
+novoBox.addEventListener("focusin", e => { const f = e.target.form; if (f && f.id==="fnovo") showSug(f, SUG[e.target.name] ? e.target.name : null); });
+// o toque na sugestão não pode tirar o foco do campo antes do clique
+novoBox.addEventListener("pointerdown", e => { if (e.target.closest("[data-pick]")) e.preventDefault(); });
+novoBox.addEventListener("change", async e => {
+  if (e.target.name!=="foto") return;
+  const prev = document.getElementById("nfprev"), warn = document.getElementById("nfwarn"), file = e.target.files[0];
+  if (prev.src) URL.revokeObjectURL(prev.src);
+  warn.textContent = "";
+  if (file) { prev.src = URL.createObjectURL(file); prev.hidden = false; } else { prev.removeAttribute("src"); prev.hidden = true; return; }
+  const dim = await imageSize(file);
+  if (dim && Math.max(...dim) < MIN_FOTO) warn.textContent = lowResText(dim) + " Se puder, escolha uma foto maior.";
+});
+novoBox.addEventListener("input", e => {
+  const f = e.target.form; if (!f) return;
+  if (e.target.name==="tipo") f.tipo.dataset.manual = "1";
+  if (e.target.name==="casa" && !f.tipo.dataset.manual){
+    const c = norm(f.casa.value.trim()), known = DATA.find(x => norm(x.c)===c);
+    f.tipo.value = known ? known.t : ARABES.some(a => norm(a)===c) ? "Árabe" : "Grife";
+  }
+  if (SUG[e.target.name]) showSug(f, e.target.name);
+  checkNovo(f);
+});
+novoBox.addEventListener("click", e => {
+  if (e.target.closest("[data-cancel]")) { closeNovo(); return; }
+  const b = e.target.closest("[data-pick]"); if (!b) return;
+  const f = document.getElementById("fnovo"), name = b.dataset.pick, o = b.closest(".sug")._opts[+b.dataset.i];
+  const set = (n, v) => { f[n].value = v; f[n].dispatchEvent(new Event("input", { bubbles:true })); };
+  if (name==="perfume" && !f.casa.value.trim()) set("casa", o.casa);
+  set(name, o.v);
+  const next = { casa:"perfume", perfume:"conc", conc:"ml" }[name];
+  f[next].focus();
+});
+novoBox.addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, msg = document.getElementById("msg-novo");
+  const casa = f.casa.value.trim(), perfume = f.perfume.value.trim(), conc = f.conc.value.trim(), ml = +f.ml.value.replace(/\D/g,"");
+  if (!casa || !perfume || !conc) { msg.textContent = "Preencha casa, perfume e concentração."; return; }
+  if (!(ml>0 && ml<=1000)) { msg.textContent = "Digite o volume em ml, por exemplo 100."; return; }
+  const exact = checkNovo(f);
+  if (exact) { msg.textContent = exact.novo ? "Este item já foi registrado no app." : `Este item já está no catálogo (ID ${exact.id}). Para anotar um preço, abra o item na lista.`; return; }
+  const now = new Date().toISOString(), old = editing ? findP(editing) : null;
+  const p = { id: editing || "n" + Date.now().toString(36), c:casa, p:perfume, k:conc, ml, t:f.tipo.value, o:f.obs.value.trim(), re: old ? old.re : now, novo:true,
+              foto: old ? old.foto : "" };
+  let m = old ? manual[old.id] : null;
+  if (!old && f.preco.value.trim()){
+    const preco = parseMoney(f.preco.value);
+    if (!(preco>0)) { msg.textContent = "Digite o preço em dólares, por exemplo 129,90, ou deixe em branco."; return; }
+    m = { [f.ptipo.value]: { preco, fonte:f.fonte.value.trim(), data:f.data.value || today(), registrado_em:now } };
+  }
+  const btn = f.querySelector("button[type=submit]"); btn.disabled = true; msg.textContent = "Salvando…";
+  try {
+    const file = f.foto && f.foto.files[0];
+    if (file) { msg.textContent = "Enviando foto…"; p.foto = await uploadPhoto(file); }
+    await colNovos.doc(p.id).set(novoDoc(p, m));
+    const item = toItem(p.id, novoDoc(p, m));
+    novos = novos.filter(x => x.id!==p.id).concat(item);
+    if (m) manual[p.id] = m;
+    closeNovo();
+    state.open = p.id; state.mtype = firstType(m); render();
+    scrollBelowBar(list.querySelector(`[data-id="${p.id}"]`));
+  } catch(err){ btn.disabled = false; msg.textContent = err && err.code in { unsupported_type:1, too_large:1, quota_or_state:1, rate_limited:1 } ? fotoError(err) : saveError(err); }
+});
+async function deleteNovo(id){
+  const p = findP(id);
+  if (!p || !(await askInline(document.getElementById("nmsg-"+id), `Excluir ${p.c} ${p.p} ${p.k} ${p.ml} ml? Os preços anotados${p.foto?" e a foto":""} também serão apagados.`, "Excluir item"))) return;
+  try {
+    await colNovos.doc(id).delete(); novos = novos.filter(x => x.id!==id); delete manual[id]; state.open = null; render();
+    if (p.foto && assets) assets.delete(p.foto).catch(() => {});
+  }
+  catch(err){ const msg = document.getElementById("msg-"+id); if (msg) msg.textContent = "Não foi possível excluir agora. Tente de novo."; }
+}
+document.getElementById("addnovo").addEventListener("click", () => openNovo(null));
+
+// ---------- fotos ----------
+const fotoInput = document.getElementById("fotoInput"), lb = document.getElementById("lb");
+let fotoTarget = null;  // id do item que vai receber a foto escolhida
+function openLightbox(assetId, cap){
+  lb.querySelector("img").src = blobUrl(assetId);
+  lb.querySelector("img").alt = cap ? "Foto: " + cap : "Foto";
+  lb.querySelector(".lb-cap").textContent = cap || "";
+  lb.hidden = false; document.body.style.overflow = "hidden";
+  lb.querySelector(".lb-x").focus();
+}
+function closeLightbox(){ lb.hidden = true; lb.querySelector("img").removeAttribute("src"); document.body.style.overflow = ""; }
+lb.addEventListener("click", closeLightbox);
+document.addEventListener("keydown", e => { if (e.key==="Escape" && !lb.hidden) closeLightbox(); });
+// imagem que não carrega (asset apagado): some a miniatura; nos detalhes, aviso no lugar
+document.addEventListener("error", e => {
+  const t = e.target;
+  if (!(t instanceof HTMLImageElement) || !t.closest("#list")) return;
+  if (t.classList.contains("thumb")) t.remove();
+  else if (t.dataset.zoom) t.replaceWith(Object.assign(document.createElement("p"), { className:"note", textContent:"A foto não pôde ser carregada." }));
+}, true);
+
+// confirmação dentro da página (sem o confirm() do navegador): texto e dois botões em `el`; resolve true ou false
+function askInline(el, text, ok, cancel = "Cancelar"){
+  return new Promise(res => {
+    if (!el) return res(false);
+    const box = Object.assign(document.createElement("div"), { className:"ask" });
+    const b1 = Object.assign(document.createElement("button"), { type:"button", className:"btn", textContent:ok });
+    const b2 = Object.assign(document.createElement("button"), { type:"button", className:"btn ghost", textContent:cancel });
+    const done = v => { el.replaceChildren(); res(v); };
+    b1.addEventListener("click", () => done(true)); b2.addEventListener("click", () => done(false));
+    const row = Object.assign(document.createElement("div"), { className:"btns" }); row.append(b1, b2);
+    box.append(Object.assign(document.createElement("p"), { textContent:text }), row);
+    el.replaceChildren(box); b1.focus();
+  });
+}
+// fotos com menos de 800 px no lado maior ficam borradas em tela cheia
+const MIN_FOTO = 800;
+async function imageSize(file){
+  try { const b = await createImageBitmap(file); const d = [b.width, b.height]; if (b.close) b.close(); return d; } catch(e){ return null; }
+}
+const lowResText = d => `Esta foto tem ${d[0]} × ${d[1]} px. Abaixo de ${MIN_FOTO} px no lado maior ela pode ficar borrada quando ampliada.`;
+
+// reduz a foto (lado maior até 1600 px, JPEG) antes de enviar; se o navegador não decodificar, envia o arquivo como veio
+async function prepImage(file){
+  try {
+    const bmp = await createImageBitmap(file);
+    const s = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement("canvas");
+    c.width = Math.round(bmp.width * s); c.height = Math.round(bmp.height * s);
+    c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+    const b = await new Promise(r => c.toBlob(r, "image/jpeg", 0.85));
+    if (b) return b;
+  } catch(e){}
+  if (/^image\/(jpeg|png|webp|gif)$/.test(file.type)) return file;
+  throw { code:"unsupported_type" };
+}
+const fotoError = err => ({
+  unsupported_type: "Formato de imagem não aceito. Use JPEG ou PNG.",
+  too_large: "A foto é grande demais (limite de 20 MB).",
+  quota_or_state: "O espaço de fotos do app está cheio.",
+  rate_limited: "Muitas fotos seguidas. Espere um pouco e tente de novo.",
+  not_granted: "Você não tem permissão para enviar fotos nesta página.",
+}[err && err.code] || "Não foi possível enviar a foto agora. Tente de novo em instantes.");
+async function uploadPhoto(file){
+  const blob = await prepImage(file);
+  try { return (await assets.upload(blob, { type: blob.type || "image/jpeg" })).id; }
+  catch(err){
+    if (err && err.code==="store_unavailable"){ await new Promise(r => setTimeout(r, 1500)); return (await assets.upload(blob, { type: blob.type || "image/jpeg" })).id; }
+    throw err;
+  }
+}
+// grava (ou apaga, com assetId null) o ponteiro da foto do item
+async function savePhotoRef(p, assetId){
+  if (p.novo){
+    const item = { ...p, foto: assetId || "" };
+    await colNovos.doc(p.id).set(novoDoc(item, manual[p.id]));
+    novos = novos.map(x => x.id===p.id ? item : x);
+  } else if (assetId){
+    await colFotos.doc(String(p.id)).set({ id:p.id, casa:p.c, perfume:p.p, concentracao:p.k, ml:p.ml, foto:assetId, registrado_em:new Date().toISOString() });
+    fotos[p.id] = assetId;
+  } else {
+    await colFotos.doc(String(p.id)).delete();
+    delete fotos[p.id];
+  }
+}
+fotoInput.addEventListener("change", async () => {
+  const file = fotoInput.files[0], id = fotoTarget; fotoTarget = null;
+  if (!file || id==null) return;
+  const p = findP(id), msg = () => document.getElementById("fmsg-"+id), old = ownPhoto(p);
+  const dim = await imageSize(file);
+  if (dim && Math.max(...dim) < MIN_FOTO && !(await askInline(msg(), lowResText(dim), "Enviar mesmo assim", "Escolher outra"))){
+    fotoTarget = id; fotoInput.value = ""; fotoInput.click();   // ainda dentro do toque em "Escolher outra"
+    return;
+  }
+  if (msg()) msg().textContent = "Enviando foto…";
+  try {
+    const assetId = await uploadPhoto(file);
+    await savePhotoRef(p, assetId);
+    if (old) assets.delete(old).catch(() => {});   // a foto anterior não é mais usada por nenhum item
+    render();
+  } catch(err){ if (msg()) msg().textContent = fotoError(err); }
+});
+async function removePhoto(id){
+  const p = findP(id), old = ownPhoto(p);
+  if (!old || !(await askInline(document.getElementById("fmsg-"+id), `Remover a foto de ${p.c} ${p.p} ${p.k} ${p.ml} ml?`, "Remover foto"))) return;
+  try { await savePhotoRef(p, null); assets.delete(old).catch(() => {}); render(); }
+  catch(err){ const m = document.getElementById("fmsg-"+id); if (m) m.textContent = "Não foi possível remover a foto agora. Tente de novo."; }
+}
+
+chips(); render();
+// link para a outra versão do catálogo: no app abre o outro artifact; no site, a outra pasta
+{ const sw = document.getElementById("swap"); sw.href = CONSULTA ? "../" : "https://claude.ai/artifact/RbUbfPWCbRSrqh9T7b93LK"; if (!CONSULTA) { sw.target = "_blank"; sw.rel = "noopener"; } }
+const ds = document.getElementById("dbstate");
+// no site público a linha de contagem sai, para sobrar tela no celular
+if (CONSULTA) { fotos = FOTOS; document.getElementById("count").hidden = true; ds.textContent = "Consulta somente leitura. Preços de referência nos EUA: confira na loja antes de comprar."; render(); }
+else (async () => {
+  ds.textContent = "Carregando suas anotações…";
+  try { db = await window.claude?.use?.("db"); } catch(e){ db = null; }
+  if (!db){ ds.textContent = "Anotações de preço manual indisponíveis nesta visualização (abra logado no claude.ai)."; render(); return; }
+  col = db.collection("precos_manuais");
+  colNovos = db.collection("itens_novos");
+  colFotos = db.collection("fotos");
+  document.getElementById("addnovo").hidden = false;
+  // enviar fotos é só para quem pode editar o app; sem isso as fotos aparecem, mas os botões ficam ocultos
+  window.claude.use("assets").then(a => { assets = a; if (a) render(); }).catch(() => {});
+  const refresh = () => {
+    manual = { ...manualCat, ...manualNovos };
+    const n = Object.keys(manualCat).length, k = novos.length;
+    ds.textContent = (n || k) ? [n ? `${n} perfume${n>1?"s":""} com preço anotado` : "", k ? `${k} ${k>1?"itens novos":"item novo"} ainda fora da planilha` : ""].filter(Boolean).join(" · ")
+      + ". Peça ao Claude para levar as anotações para a planilha." : "Nenhum preço manual registrado ainda. Toque num perfume para registrar.";
+    const active = document.activeElement; const typing = active && active.closest && active.closest("form.man:not(.novo)");
+    if (!typing) render();
+  };
+  const fail = () => { ds.textContent = "As anotações não puderam ser carregadas agora. Recarregue a página."; };
+  col.onSnapshot(snap => {
+    const m = {}; snap.docs.forEach(d => { const x = fromDoc(d.data()); if (x) m[+d.id] = x; });
+    manualCat = m; refresh();
+  }, fail);
+  colNovos.onSnapshot(snap => {
+    const m = {}, items = [];
+    snap.docs.forEach(d => { const x = d.data(); if (!x || !x.casa) return; items.push(toItem(d.id, x)); const pm = fromDoc(x); if (pm) m[d.id] = pm; });
+    novos = items.sort((a,b) => (a.re||"").localeCompare(b.re||"")); manualNovos = m; refresh();
+  }, fail);
+  colFotos.onSnapshot(snap => {
+    const m = {}; snap.docs.forEach(d => { const x = d.data(); if (x && x.foto) m[+d.id] = x.foto; });
+    fotos = m; refresh();
+  }, fail);
+})();
+</script>
+
+</body></html>
