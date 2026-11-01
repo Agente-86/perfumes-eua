@@ -86,7 +86,7 @@ form.man h3{margin:0;font-size:.9rem;color:var(--manual)}
 .btn.ghost{background:transparent;color:var(--manual);border:1px solid var(--manual)}
 .btn:disabled{opacity:.5;cursor:default}
 .msg{font-size:.8rem;color:var(--manual)}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:3px}
 .seg button{font:inherit;font-size:.8rem;font-weight:600;border:0;border-radius:7px;padding:8px 4px;background:transparent;color:var(--muted);cursor:pointer}
 .seg button[aria-checked="true"]{background:var(--manual);color:var(--card)}
 ul.saved{margin:0;padding-left:18px;font-size:.82rem;display:grid;gap:2px}
@@ -198,10 +198,11 @@ const isDC = p => (p.cat||[]).includes("DC Clássico");
 const TIPOS_PRECO = [
   ["regular", "Regular EUA", "Preço regular", "Ex.: Macy's, site da marca", "Só preço cheio: Amazon (vendido pela Amazon), Macy's, Sephora, Ulta, Bloomingdale's ou site da marca. Desconto, cupom e Jomashop vão em Promoção."],
   ["promo", "Promoção EUA", "Preço promocional", "Ex.: Jomashop, Macy's com cupom", "Preço com desconto ou cupom, ou de discounters como a Jomashop."],
-  ["duty_free", "Duty free", "Preço duty free", "Ex.: Duty free do aeroporto de Miami", "Preço em loja duty free (aeroporto, travel retail)."]];
+  ["duty_free", "Duty free", "Preço duty free", "Ex.: Duty free do aeroporto de Miami", "Preço em loja duty free (aeroporto, travel retail)."],
+  ["leilao", "Leilão", "Preço em leilão", "Ex.: eBay, leilão online", "Preço que você viu em leilão na internet (arremate ou lance). Fica como referência: não entra no menor preço."]];
 const state = { q:"", band:"all", grife:false, nicho:false, arabe:false, varejo:false, celeb:false, classico:false, dc:false, semPreco:false, onlyManual:false, sort:"rel", open:null, mtype:"regular" };
 const ARABES = ["Lattafa","Maison Alhambra","Armaf","French Avenue","Rasasi","Al Haramain","Afnan","Ajmal","Swiss Arabian","Al Wataniah"];
-let manual = {};        // id -> {regular?, promo?, duty_free?}, cada um {preco, fonte, data, registrado_em}
+let manual = {};        // id -> {regular?, promo?, duty_free?, leilao?}, cada um {preco, fonte, data, registrado_em}
 let manualCat = {}, manualNovos = {};   // anotações dos itens do catálogo (precos_manuais) e dos itens novos (itens_novos)
 let novos = [];         // itens registrados no app que ainda não estão na planilha; id "n…" até ganharem ID na planilha
 let fotos = {};         // ID do catálogo -> id do asset da foto (coleção fotos); itens novos guardam a foto no próprio documento
@@ -221,6 +222,7 @@ function fromDoc(x){
   else if (typeof x.preco==="number") m.regular = { preco:x.preco, fonte:x.fonte||"", data:x.data||"", registrado_em:x.registrado_em||"" };
   if (ok(x.promo)) m.promo = x.promo;
   if (ok(x.duty_free)) m.duty_free = x.duty_free;
+  if (ok(x.leilao)) m.leilao = x.leilao;
   return Object.keys(m).length ? m : null;
 }
 const firstType = m => (TIPOS_PRECO.find(([k]) => m && m[k]) || TIPOS_PRECO[0])[0];
@@ -248,13 +250,14 @@ function view(p){
   const reg = m?.regular ? m.regular.preco : p.r;
   const pr = m?.promo ? m.promo.preco : p.pr;
   const df = m?.duty_free ? m.duty_free.preco : p.df;
+  const le = m?.leilao ? m.leilao.preco : (p.le ?? null);   // leilão (app ou coluna AD da planilha): fora do menor preço
   const vals = [reg, pr, df].filter(v => v!=null);
   const low = vals.length ? Math.min(...vals) : null;
   const canal = low==null ? "" : (pr!=null && pr===low && low!==reg ? "Promo EUA" : (df!=null && df===low && low!==reg ? "Duty free" : "Regular"));
   let band = "none";
   if (isDC(p)) band = "dc";
   else if (reg!=null) band = reg>150?"b150":reg>=100?"b100":reg>=50?"b50":reg>=30?"b30":"b0";
-  return { reg, pr, df, low, canal, band, per: reg!=null && p.ml && !isDC(p) ? reg/p.ml*100 : null, save: reg && low!=null ? 1-low/reg : 0, m };
+  return { reg, pr, df, le, low, canal, band, per: reg!=null && p.ml && !isDC(p) ? reg/p.ml*100 : null, save: reg && low!=null ? 1-low/reg : 0, m };
 }
 
 function matches(p, v){
@@ -269,14 +272,19 @@ function matches(p, v){
   const tipos = TIPOS.filter(([k]) => state[k]).map(([,l]) => l);
   if (tipos.length && !tipos.includes(p.t)) return false;
   if (CATS.some(([k,,c]) => state[k] && !(p.cat||[]).includes(c))) return false;
-  if (state.semPreco && v.reg!=null) return false;
+  if (state.semPreco && v.reg!=null && photoOf(p)) return false;
   if (state.onlyManual && !v.m && !p.novo) return false;
   return true;
 }
 
+// com o filtro Sem preço/foto, o resumo diz o que falta no item
 function originPill(p, v){
   if (CONSULTA) return "";
-  if (p.novo) return `<span class="pill novo">NOVO · a revisar</span>` + (v.m?.regular ? originPill({}, v) : "");
+  const falta = state.semPreco ? [v.reg==null ? "preço" : "", photoOf(p) ? "" : "foto"].filter(Boolean).join(" e ") : "";
+  return (falta ? `<span class="pill">Falta ${falta}</span>` : "") + originPill0(p, v);
+}
+function originPill0(p, v){
+  if (p.novo) return `<span class="pill novo">NOVO · a revisar</span>` + (v.m?.regular ? originPill0({}, v) : "");
   if (v.m?.regular) return `<span class="pill man">MANUAL · ${esc(v.m.regular.fonte||"sem fonte")} · ${fmtDate(v.m.regular.data)}</span>`;
   // verificado (data e fonte) e "sem preço" ficam só no cartão aberto; no resumo, apenas o que pede atenção
   if (p.r!=null && !p.bd) return `<span class="pill">Fonte anterior · não revalidado</span>`;
@@ -303,7 +311,8 @@ function card(p, v){
   const best = x => v.low!=null && v.reg!=null && x===v.low && x < v.reg ? ' class="best"' : "";
   if (v.pr!=null) alts.push(`<span${best(v.pr)}>Promo <b>${money(v.pr)}</b>${off(v.pr)}${tag("promo")}</span>`);
   if (v.df!=null) alts.push(`<span${best(v.df)}>Duty free <b>${money(v.df)}</b>${off(v.df)}${tag("duty_free")}</span>`);
-  const manPills = [["promo","PROMO"],["duty_free","DUTY FREE"]].filter(([k]) => v.m?.[k])
+  if (v.le!=null) alts.push(`<span>Leilão <b>${money(v.le)}</b>${off(v.le)}${tag("leilao")}</span>`);
+  const manPills = [["promo","PROMO"],["duty_free","DUTY FREE"],["leilao","LEILÃO"]].filter(([k]) => v.m?.[k])
     .map(([k,l]) => `<span class="pill man">${l} MANUAL · ${esc(v.m[k].fonte||"sem fonte")} · ${fmtDate(v.m[k].data)}</span>`).join("");
   const ph = photoOf(p);
   const pills = originPill(p, v) + manPills + sit;
@@ -324,6 +333,7 @@ function card(p, v){
         ${p.u?`<dt>Fonte</dt><dd><a href="${esc(p.u)}" target="_blank" rel="noopener">abrir página do preço</a></dd>`:""}
         ${p.pr!=null?`<dt>Promoção</dt><dd>${money(p.pr)}${p.fp?` · ${esc(p.fp)}`:""}</dd>`:""}
         ${p.df!=null?`<dt>Duty free</dt><dd>${money(p.df)}${p.fd?` · ${esc(p.fd)}`:""}</dd>`:""}
+        ${p.le!=null?`<dt>Leilão</dt><dd>${money(p.le)}${p.fl?` · ${esc(p.fl)}`:""}</dd>`:""}
         ${p.o?`<dt>Observações</dt><dd>${esc(p.o)}</dd>`:""}
         ${p.novo?`<dt>Registrado</dt><dd>${fmtDate(p.re)} pelo app; ainda não está na planilha</dd>`:""}
       </dl>
@@ -370,7 +380,7 @@ function manualForm(p, v){
   if (!col) return `<p class="note">Para registrar um preço manual, abra esta página logado no claude.ai. As anotações ficam salvas e aparecem em qualquer aparelho.</p>`;
   const m = v.m || {}, t = state.mtype, e = m[t];
   const [, , campo, exemplo, dica] = TIPOS_PRECO.find(([k]) => k===t);
-  const ref = t==="regular" ? p.r : t==="promo" ? p.pr : p.df;
+  const ref = t==="regular" ? p.r : t==="promo" ? p.pr : t==="duty_free" ? p.df : null;
   const keep = t==="regular" && !p.novo ? `O preço verificado (${p.r!=null?money(p.r):"nenhum"}) continua guardado.` : "";
   const saved = TIPOS_PRECO.filter(([k]) => m[k]).map(([k,l]) => `<li><b>${l}:</b> ${money(m[k].preco)} · ${esc(m[k].fonte||"sem fonte")} · ${fmtDate(m[k].data)}</li>`).join("");
   return `<form class="man" data-id="${p.id}">
@@ -412,7 +422,7 @@ function render(){
 function chips(){
   document.getElementById("bands").innerHTML = BANDS.map(([k,l]) => `<button type="button" class="chip" data-band="${k}" aria-pressed="${state.band===k}">${l}</button>`).join("");
   // Sem preço e Anotados são referência do dono: não aparecem no site público
-  const t = [...TIPOS, ...CATS.map(([k,l]) => [k,l]), ...(CONSULTA ? [] : [["semPreco","Sem preço"], ["onlyManual","Anotados"]])];
+  const t = [...TIPOS, ...CATS.map(([k,l]) => [k,l]), ...(CONSULTA ? [] : [["semPreco","Sem preço/foto"], ["onlyManual","Anotados"]])];
   document.getElementById("types").innerHTML = t.map(([k,l]) => `<button type="button" class="chip${k==="onlyManual"?" m":""}" data-flag="${k}" aria-pressed="${state[k]}">${l}</button>`).join("");
 }
 
