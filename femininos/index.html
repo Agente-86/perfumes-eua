@@ -134,7 +134,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
   <header class="hdr">
     <div>
       <h1>Perfumes Femininos EUA</h1>
-      <div class="sub" id="sub">Preços regulares nos EUA · atualizado em 02/11/2026</div>
+      <div class="sub" id="sub">Preços regulares nos EUA · atualizado em 03/11/2026</div>
       <a class="swap" id="swap" href="#">Ver versão masculina →</a>
     </div>
     <button class="btn add" id="addnovo" type="button" hidden>+ Novo item</button>
@@ -307,10 +307,21 @@ function shortSrc(t){
 // Pronúncia: a voz en-US do próprio aparelho (a do Google, se houver) lê o campo fa = "casa, perfume" com o nome original
 const synth = window.speechSynthesis, canSay = !!(synth && window.SpeechSynthesisUtterance);
 let voz = null;
+// ordem: Google (Android) > Premium > Aprimorada/Enhanced (iPhone: "Ava (Premium)", com.apple.voice.premium...) > en-US
+// padrão do aparelho > outra en-US; vozes de brincadeira e Eloquence (Albert, Grandma...) ficam por último
 function pickVoice(){
   const vs = synth.getVoices().filter(x => /^en[-_]/i.test(x.lang));
-  const us = x => x.lang.replace("_","-")==="en-US";
-  voz = vs.find(x => us(x) && /google/i.test(x.name)) || vs.find(us) || vs[0] || null;
+  const nota = x => {
+    const t = `${x.name} ${x.voiceURI}`;
+    let s = x.lang.replace("_","-")==="en-US" ? 10 : 0;
+    if (/google/i.test(t)) s += 40;
+    else if (/premium/i.test(t)) s += 30;
+    else if (/enhanced|aprimorad|avançad|melhorad/i.test(t)) s += 20;
+    if (x.default) s += 2;
+    if (/eloquence|speech\.synthesis\.voice/i.test(x.voiceURI)) s -= 30;
+    return s;
+  };
+  voz = vs.reduce((m, x) => !m || nota(x) > nota(m) ? x : m, null);
 }
 if (canSay){ pickVoice(); synth.onvoiceschanged = pickVoice; }
 function say(p){
