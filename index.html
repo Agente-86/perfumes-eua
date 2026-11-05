@@ -42,6 +42,7 @@ h1{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1.1;m
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .chip.m[aria-pressed="true"]{background:var(--manual);border-color:var(--manual);color:var(--card)}
 .row{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.sels{display:flex;gap:6px;flex-wrap:wrap}
 .count{color:var(--muted);font-size:.82rem}
 select{font:inherit;font-size:.82rem;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
 .list{display:grid;gap:10px;margin-top:6px}
@@ -147,6 +148,8 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
     <div class="chips" id="bands" role="group" aria-label="Faixa de preço"></div>
     <div class="row">
       <div class="chips" id="types" role="group" aria-label="Filtros"></div>
+      <div class="sels">
+      <select id="fam" aria-label="Família olfativa"><option value="">Todas as famílias</option></select>
       <select id="sort" aria-label="Ordenar">
         <option value="rel">Ordem do catálogo</option>
         <option value="asc">Menor preço</option>
@@ -154,6 +157,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
         <option value="per">Menor US$/100 ml</option>
         <option value="az">Casa A–Z</option>
       </select>
+      </div>
     </div>
     <div class="count" id="count"></div>
   </div>
@@ -202,7 +206,7 @@ const TIPOS_PRECO = [
   ["promo", "Promoção EUA", "Preço promocional", "Ex.: Jomashop, Macy's com cupom", "Preço com desconto ou cupom, ou de discounters como a Jomashop."],
   ["duty_free", "Duty free", "Preço duty free", "Ex.: Duty free do aeroporto de Miami", "Preço em loja duty free (aeroporto, travel retail)."],
   ["leilao", "Leilão", "Preço em leilão", "Ex.: eBay, leilão online", "Preço que você viu em leilão na internet (arremate ou lance). Fica como referência: não entra no menor preço."]];
-const state = { q:"", band:"all", grife:false, nicho:false, arabe:false, varejo:false, classico:false, dc:false, semPreco:false, onlyManual:false, sort:"rel", open:null, mtype:"regular" };
+const state = { q:"", fam:"", band:"all", grife:false, nicho:false, arabe:false, varejo:false, classico:false, dc:false, semPreco:false, onlyManual:false, sort:"rel", open:null, mtype:"regular" };
 const ARABES = ["Lattafa","Maison Alhambra","Armaf","French Avenue","Rasasi","Al Haramain","Afnan","Ajmal","Swiss Arabian","Al Wataniah"];
 let manual = {};        // id -> {regular?, promo?, duty_free?, leilao?}, cada um {preco, fonte, data, registrado_em}
 let manualCat = {}, manualNovos = {};   // anotações dos itens do catálogo (precos_manuais) e dos itens novos (itens_novos)
@@ -262,7 +266,25 @@ function view(p){
   return { reg, pr, df, le, low, canal, band, per: reg!=null && p.ml && !isDC(p) ? reg/p.ml*100 : null, save: reg && low!=null ? 1-low/reg : 0, m };
 }
 
+// grande grupo da família olfativa, para o menu Família: a primeira palavra define o grupo (sinônimos juntos);
+// qualquer família com "gourmand" vai para Gourmand; "Almiscarado" cede para a palavra seguinte (sozinho, Floral)
+const FAM_GRUPOS = ["Amadeirado", "Oriental / Âmbar", "Aromático / Fougère", "Cítrico", "Aquático / Fresco", "Floral",
+                    "Gourmand", "Couro", "Chipre", "Frutado"];
+const FAM_PAL = { amadeirado:"Amadeirado", oud:"Amadeirado", oriental:"Oriental / Âmbar", ambar:"Oriental / Âmbar",
+  ambarado:"Oriental / Âmbar", aromatico:"Aromático / Fougère", fougere:"Aromático / Fougère", verde:"Aromático / Fougère",
+  citrico:"Cítrico", aquatico:"Aquático / Fresco", fresco:"Aquático / Fresco", floral:"Floral", couro:"Couro",
+  chipre:"Chipre", frutado:"Frutado" };
+function famGrupo(f){
+  const w = norm(f).split(/[^a-z]+/).filter(Boolean);
+  if (!w.length) return "";
+  if (w.includes("gourmand")) return "Gourmand";
+  const k = w.find(x => x !== "almiscarado");
+  if (!k) return "Floral";
+  return FAM_PAL[k] || "";
+}
+
 function matches(p, v){
+  if (state.fam && famGrupo(p.f) !== state.fam) return false;
   if (state.q){
     const hay = norm(`${p.c} ${ALIAS[p.c]||""} ${p.p} ${p.k} ${p.ml||""}`);
     const words = hay.split(/[\s\-]+/), sig = (ALIAS[p.c]||"").split(" ");
@@ -449,6 +471,13 @@ function render(){
   const mc = document.querySelector('.chip.m'); if (mc) mc.textContent = `Anotados${nMan?` (${nMan})`:""}`;
 }
 
+function famOpts(){
+  const n = {};
+  DATA.forEach(p => { const g = famGrupo(p.f); if (g) n[g] = (n[g]||0) + 1; });
+  document.getElementById("fam").innerHTML = `<option value="">Todas as famílias</option>` +
+    FAM_GRUPOS.filter(g => n[g]).map(g => `<option value="${g}"${state.fam===g?" selected":""}>${g}</option>`).join("");
+}
+
 function chips(){
   document.getElementById("bands").innerHTML = BANDS.map(([k,l]) => `<button type="button" class="chip" data-band="${k}" aria-pressed="${state.band===k}">${l}</button>`).join("");
   // Sem preço e Anotados são referência do dono: não aparecem no site público
@@ -460,6 +489,7 @@ const qEl = document.getElementById("q"), clr = document.getElementById("clr");
 qEl.addEventListener("input", () => { state.q = qEl.value; clr.hidden = !qEl.value; state.open=null; render(); });
 clr.addEventListener("click", () => { qEl.value=""; state.q=""; clr.hidden=true; render(); qEl.focus(); });
 document.getElementById("sort").addEventListener("change", e => { state.sort=e.target.value; render(); });
+document.getElementById("fam").addEventListener("change", e => { state.fam=e.target.value; state.open=null; render(); });
 document.getElementById("bands").addEventListener("click", e => { const b=e.target.closest("[data-band]"); if(!b) return; state.band=b.dataset.band; chips(); render(); });
 document.getElementById("types").addEventListener("click", e => { const b=e.target.closest("[data-flag]"); if(!b) return; const k=b.dataset.flag; state[k]=!state[k]; chips(); render(); });
 
@@ -802,7 +832,7 @@ async function removePhoto(id){
   catch(err){ const m = document.getElementById("fmsg-"+id); if (m) m.textContent = "Não foi possível remover a foto agora. Tente de novo."; }
 }
 
-chips(); render();
+famOpts(); chips(); render();
 // link para a outra versão do catálogo: no app abre o outro artifact; no site, a outra pasta
 { const sw = document.getElementById("swap"); sw.href = CONSULTA ? "femininos/" : "https://claude.ai/artifact/9VAcvhYosj3a31expxhh3C"; if (!CONSULTA) { sw.target = "_blank"; sw.rel = "noopener"; } }
 const ds = document.getElementById("dbstate");
