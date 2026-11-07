@@ -63,6 +63,9 @@ select{font:inherit;font-size:.82rem;padding:6px 8px;border-radius:8px;border:1p
 .price .v.none{font-size:.9rem;font-weight:500;color:var(--muted)}
 .price .per{font-size:.75rem;color:var(--muted);white-space:nowrap}
 .price .was{font-size:.72rem;color:var(--muted);text-decoration:line-through}
+.price .duo{display:flex;gap:12px;justify-content:flex-end;align-items:flex-start}
+.price .brl .v{font-size:1.05rem;font-weight:600;line-height:1.9;color:var(--ink)}
+.price .brl .per{font-size:.68rem}
 .alts{display:flex;flex-direction:column;gap:2px;font-size:.84rem;font-variant-numeric:tabular-nums;margin-top:8px}
 .alts>span{white-space:nowrap}
 .top .pills{margin-top:8px}
@@ -194,7 +197,9 @@ const ALIAS = {
   "Tiziana Terenzi":"tt", "Narciso Rodriguez":"nr", "Michael Kors":"mk", "Montblanc":"mont blanc", "Rabanne":"paco rabanne",
   "Mugler":"thierry mugler", "Kilian":"by kilian", "Dior":"christian dior cd", "Bvlgari":"bulgari", "Penhaligon's":"penhaligons",
   "Boadicea the Victorious":"boadicea", "Jo Malone London":"jo malone", "Hugo Boss":"boss", "Salvatore Ferragamo":"ferragamo",
-  "Issey Miyake":"issey", "Estée Lauder":"el estee lauder", "Elizabeth Arden":"arden", "Victoria's Secret":"vs victorias", "Frédéric Malle":"fm malle frederic", "Juliette Has a Gun":"jhag juliette", "Ariana Grande":"ag ariana", "Sarah Jessica Parker":"sjp", "Jennifer Lopez":"jlo j.lo", "Fenty Beauty":"fenty rihanna", "Kylie Cosmetics":"kylie", "Maison Alhambra":"alhambra", "Giorgio Beverly Hills":"giorgio", "KKW Fragrance":"kkw kim kardashian", "Tommy Hilfiger":"tommy", "Tommy Bahama":"tommy", "Initio":"initio parfums prives", "Joop!":"joop"
+  "Issey Miyake":"issey", "Estée Lauder":"el estee lauder", "Elizabeth Arden":"arden", "Victoria's Secret":"vs victorias", "Frédéric Malle":"fm malle frederic", "Juliette Has a Gun":"jhag juliette", "Ariana Grande":"ag ariana", "Sarah Jessica Parker":"sjp", "Jennifer Lopez":"jlo j.lo", "Fenty Beauty":"fenty rihanna", "Kylie Cosmetics":"kylie", "Maison Alhambra":"alhambra", "Giorgio Beverly Hills":"giorgio", "KKW Fragrance":"kkw kim kardashian", "Tommy Hilfiger":"tommy", "Tommy Bahama":"tommy", "Initio":"initio parfums prives", "Joop!":"joop",
+  "Armaf":"cdn", "Maison Alhambra":"alhambra", "Al Haramain":"alharamain haramain", "Al Wataniah":"alwataniah wataniah",
+  "French Avenue":"fragrance world"
 };
 // sigla digitada (ck, ysl...) não procura no meio das palavras ("ck" não acha "Black"): vale a sigla da casa ou o começo de uma palavra
 const SIGLAS = new Set(Object.values(ALIAS).flatMap(s => s.split(" ")).filter(w => w.length <= 3));
@@ -215,6 +220,7 @@ let fotos = {};         // ID do catálogo -> id do asset da foto (coleção fot
 let db = null, col = null, colNovos = null, colFotos = null, assets = null;
 
 const money = v => v==null ? "" : "US$ " + v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+const reais = v => v==null ? "" : "R$ " + v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
 const norm = s => (s||"").toString().normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
 const oz = ml => (ml/29.5735).toFixed(1).replace(".",",");
 const esc = s => (s??"").toString().replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -383,6 +389,7 @@ function card(p, v){
           :p.r!=null?`<dt>${CONSULTA?"Preço regular":"Verificado"}</dt><dd>${money(p.r)}${p.bt?` · ${esc(p.bt)}`:""}${p.bd?` (${esc(p.bd)})`:CONSULTA?"":" · fonte anterior, não revalidado"}</dd>`
           :`<dt>${CONSULTA?"Preço regular":"Verificado"}</dt><dd>${CONSULTA?"Sem preço regular encontrado":"Sem preço regular verificado"}</dd>`}
         ${p.u?`<dt>Fonte</dt><dd><a href="${esc(p.u)}" target="_blank" rel="noopener">abrir página do preço</a></dd>`:""}
+        ${p.br!=null?`<dt>Preço no Brasil</dt><dd>${reais(p.br)} · ${p.bk==="Regular"?"regular":"referência"}${p.bf?` · ${esc(p.bf)}`:""}${p.bu?` · <a href="${esc(p.bu)}" target="_blank" rel="noopener">abrir</a>`:""}</dd>`:""}
         ${p.pr!=null?`<dt>Promoção</dt><dd>${money(p.pr)}${p.fp?` · ${esc(p.fp)}`:""}</dd>`:""}
         ${p.df!=null?`<dt>Duty free</dt><dd>${money(p.df)}${p.fd?` · ${esc(p.fd)}`:""}</dd>`:""}
         ${p.le!=null?`<dt>Leilão</dt><dd>${money(p.le)}${p.fl?` · ${esc(p.fl)}`:""}</dd>`:""}
@@ -405,9 +412,11 @@ function card(p, v){
         ${pills?`<div class="pills">${pills}</div>`:""}
       </div>
       <div class="price">
+        ${p.br!=null?`<div class="duo"><div class="brl" title="${p.bk==="Regular"?"Preço regular no Brasil (site da marca)":"Preço de referência no Brasil (loja)"}"><div class="v">${reais(p.br)}</div><div class="per">${p.bk==="Regular"?"Brasil":"ref. Brasil"}</div></div><div>`:""}
         ${v.reg!=null?`<div class="v">${money(v.reg)}</div>`:`<div class="v none">sem preço</div>`}
         ${v.m?.regular && p.r!=null && v.m.regular.preco!==p.r?`<div class="was">${money(p.r)}</div>`:""}
-        <div class="per">${isDC(p) ? (v.reg!=null ? "colecionador" : "") : "preço regular"}</div>
+        <div class="per">${isDC(p) ? (v.reg!=null ? "colecionador" : "") : p.br!=null ? "EUA" : "preço regular"}</div>
+        ${p.br!=null?`</div></div>`:""}
         ${ph?`<img class="thumb" src="${blobUrl(ph.id)}" alt="" loading="lazy">`:""}
       </div>
     </div>
