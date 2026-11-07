@@ -370,47 +370,52 @@ function pickVoice(){
   voz = vs.reduce((m, x) => !m || nota(x) > nota(m) ? x : m, null);
 }
 if (canSay){ pickVoice(); synth.onvoiceschanged = pickVoice; }
-// Celular (07/11/2026): a referência da fala fica guardada (o Chrome do Android às vezes descarta a fala antes de tocar);
-// erro com a voz escolhida → tenta de novo com a voz padrão e passa a usá-la; se der erro ou nada começar, mostra um
-// aviso com o código do erro.
-let fala = null, avisoT = 0;
-// DIAGNÓSTICO temporário (07/11/2026, Android sem fala): mostra no rodapé cada etapa do toque no 🔊. Desligar depois.
-const DIAG_FALA = true;
-function aviso(t){
+// Celular (07/11/2026): a referência da fala fica guardada (o Chrome do Android às vezes descarta a fala antes de tocar).
+// Tentativas, cada uma só se a anterior der erro: 0 = voz escolhida (pickVoice) em en-US; 1 = voz padrão em en-US;
+// 2 = voz padrão sem forçar idioma (se só esta fala, a voz em inglês do aparelho está com defeito: avisa como resolver).
+// O nível que funcionou fica valendo para os próximos toques. Erro em todas → um aviso só, com o código de cada uma.
+let fala = null, avisoT = 0, nivelFala = 0;
+function aviso(t, ms){
   let el = document.getElementById("toast");
   if (!el){ el = document.createElement("div"); el.id = "toast"; el.className = "toast"; el.setAttribute("role","status"); document.body.appendChild(el); }
   el.textContent = t; el.hidden = false;
-  clearTimeout(avisoT); avisoT = setTimeout(() => { el.hidden = true; }, 12000);
+  clearTimeout(avisoT); avisoT = setTimeout(() => { el.hidden = true; }, ms || 9000);
 }
-// voz escolhida que deu erro neste aparelho: os próximos toques usam a voz padrão (dentro do toque, como o Chrome exige)
-let vozRuim = false, erroAnt = "";
-function say(p, semVoz){
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+function say(p, nivel, erros){
   if (!canSay || !p) return;
   if (!voz) pickVoice();
-  const usarVoz = voz && !semVoz && !vozRuim;
+  nivel = Math.max(nivel || 0, nivelFala); erros = erros || [];
+  if (nivel === 0 && !voz) nivel = 1;
   const u = new SpeechSynthesisUtterance(p.fa || `${p.c}, ${p.p}`);
-  u.lang = "en-US"; if (usarVoz) u.voice = voz; u.rate = 0.9;
-  let comecou = false;
+  if (nivel < 2) u.lang = "en-US";
+  if (nivel === 0) u.voice = voz;
+  u.rate = 0.9;
+  const rotulo = nivel === 0 ? `voz ${voz.name}` : nivel === 1 ? "voz padrão em inglês" : "voz padrão do aparelho";
+  let comecou = false, falhou = false;
   // o botão fica destacado enquanto fala (mostra que o toque foi recebido)
   const marca = on => document.querySelectorAll(`.say[data-say="${p.id}"]`).forEach(b => b.classList.toggle("on", on));
-  const vozNome = usarVoz ? `${voz.name} (${voz.localService===false?"online":"local"})` : "padrão do aparelho";
-  if (DIAG_FALA) aviso(`Diagnóstico: toque recebido · ${synth.getVoices().length} vozes · voz ${vozNome} · pedindo para falar…`);
-  u.onstart = () => { comecou = true; marca(true); if (DIAG_FALA) aviso(`Diagnóstico: falando (voz ${vozNome}).`); };
+  u.onstart = () => {
+    comecou = true; marca(true);
+    if (nivel > nivelFala) nivelFala = nivel;
+    if (nivel === 2 && erros.length) aviso("A voz em inglês deste aparelho não funcionou, então usei a voz padrão. Para a pronúncia em inglês: Configurações › Conversão de texto em voz › mecanismo do Google › instale ou atualize a voz Inglês (Estados Unidos).", 14000);
+  };
   u.onend = () => marca(false);
   u.onerror = e => {
     marca(false);
     if (e.error === "interrupted" || e.error === "canceled") return;
-    const msg = `voz ${vozNome}: ${e.error || "erro sem código"}`;
-    if (usarVoz) { vozRuim = true; erroAnt = msg; say(p, true); return; }
-    aviso(`O aparelho não conseguiu falar — ${erroAnt ? erroAnt + "; " : ""}${msg}.`);
+    falhou = true;
+    erros = erros.concat(`${rotulo}: ${e.error || "erro sem código"}`);
+    if (nivel < 2) { say(p, nivel + 1, erros); return; }
+    aviso(`O aparelho não conseguiu falar (${erros.join("; ")}). Teste a voz do aparelho em Configurações › Conversão de texto em voz › Ouvir um exemplo.`, 14000);
   };
   fala = u;
   // como era até 03/11 (quando funcionava no Android): cancel e speak no mesmo instante, dentro do toque
   try { synth.cancel(); synth.speak(u); }
-  catch (e) { aviso(`O aparelho recusou a fala (${e.name || e.message || e}).`); }
+  catch (e) { aviso(`O aparelho recusou a fala (${e.name || e.message || e}).`); return; }
   setTimeout(() => {
-    if (fala === u && !comecou && !synth.speaking)
-      aviso(`Sem som: o aparelho não começou a falar (${synth.getVoices().length} vozes). No iPhone, confira a chave de silencioso e o volume.`);
+    if (fala === u && !comecou && !falhou && !synth.speaking)
+      aviso(`Sem som: o aparelho não começou a falar.${isIOS ? " No iPhone, confira a chave de silencioso e o volume." : ""}`);
   }, 3000);
 }
 
@@ -574,11 +579,6 @@ list.addEventListener("pointerup", e => {
   sayToque = Date.now(); say(findP(idOf(sy.dataset.say)));
 });
 list.addEventListener("contextmenu", e => { if (e.target.closest("[data-say]")) e.preventDefault(); });
-if (DIAG_FALA){
-  list.addEventListener("pointerdown", e => { if (e.target.closest("[data-say]")) aviso(`Diagnóstico: dedo encostou (${e.pointerType || "?"}); aguardando soltar…`); });
-  list.addEventListener("pointercancel", e => { if (e.target.closest("[data-say]")) aviso("Diagnóstico: o aparelho cancelou o toque (pointercancel)."); });
-  window.addEventListener("error", e => aviso(`Diagnóstico: erro no app: ${e.message}`));
-}
 list.addEventListener("click", e => {
   const sy = e.target.closest("[data-say]");
   if (sy) { if (Date.now() - sayToque > 800) say(findP(idOf(sy.dataset.say))); return; }
