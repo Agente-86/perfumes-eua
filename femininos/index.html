@@ -76,6 +76,9 @@ select{font:inherit;font-size:.82rem;padding:6px 8px;border-radius:8px;border:1p
 }
 /* o 🔊 fica grudado na última palavra da casa (não cai sozinho para a linha de baixo) */
 .house .hw{white-space:nowrap}
+.toast{position:fixed;left:16px;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:60;max-width:480px;margin:0 auto;
+  background:var(--ink);color:var(--bg);font-size:.85rem;padding:10px 14px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.toast[hidden]{display:none}
 .alts{display:flex;flex-direction:column;gap:2px;font-size:.84rem;font-variant-numeric:tabular-nums;margin-top:8px}
 .alts>span{white-space:nowrap}
 .top .pills{margin-top:8px}
@@ -362,12 +365,35 @@ function pickVoice(){
   voz = vs.reduce((m, x) => !m || nota(x) > nota(m) ? x : m, null);
 }
 if (canSay){ pickVoice(); synth.onvoiceschanged = pickVoice; }
-function say(p){
+// Celular (07/11/2026): a referência da fala fica guardada (o Chrome do Android às vezes descarta a fala antes de tocar),
+// cancel só se já estiver falando (cancel + speak seguidos às vezes engolem a fala nova), resume contra fila travada em
+// pausa; erro com a voz escolhida → tenta de novo com a voz padrão; se nada começar, mostra um aviso com o motivo.
+let fala = null, avisoT = 0;
+function aviso(t){
+  let el = document.getElementById("toast");
+  if (!el){ el = document.createElement("div"); el.id = "toast"; el.className = "toast"; el.setAttribute("role","status"); document.body.appendChild(el); }
+  el.textContent = t; el.hidden = false;
+  clearTimeout(avisoT); avisoT = setTimeout(() => { el.hidden = true; }, 6000);
+}
+function say(p, semVoz){
   if (!canSay || !p) return;
-  synth.cancel();
+  if (!voz) pickVoice();
   const u = new SpeechSynthesisUtterance(p.fa || `${p.c}, ${p.p}`);
-  u.lang = "en-US"; if (voz) u.voice = voz; u.rate = 0.9;
-  synth.speak(u);
+  u.lang = "en-US"; if (voz && !semVoz) u.voice = voz; u.rate = 0.9;
+  let comecou = false;
+  u.onstart = () => { comecou = true; };
+  u.onerror = e => {
+    if (e.error === "interrupted" || e.error === "canceled") return;
+    if (!semVoz && voz) { say(p, true); return; }
+    aviso(`O aparelho não conseguiu falar (${e.error || "erro"}).`);
+  };
+  fala = u;
+  const falar = () => { synth.resume(); synth.speak(u); };
+  if (synth.speaking || synth.pending){ synth.cancel(); setTimeout(falar, 120); } else falar();
+  setTimeout(() => {
+    if (fala === u && !comecou && !synth.speaking)
+      aviso(`Sem som: o aparelho não começou a falar (${synth.getVoices().length} vozes). No iPhone, confira a chave de silencioso e o volume.`);
+  }, 3000);
 }
 
 // nome da casa com o botão 🔊 grudado na última palavra
