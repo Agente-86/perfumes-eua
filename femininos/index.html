@@ -177,6 +177,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
         <option value="desc">Maior preço</option>
         <option value="per">Menor US$/100 ml</option>
         <option value="az">Casa A–Z</option>
+        <option value="fz">Fragrância A–Z</option>
       </select>
       </div>
     </div>
@@ -218,6 +219,34 @@ const ALIAS = {
   "Issey Miyake":"issey", "Estée Lauder":"el estee lauder", "Elizabeth Arden":"arden", "Victoria's Secret":"vs victorias", "Frédéric Malle":"fm malle frederic", "Juliette Has a Gun":"jhag juliette", "Ariana Grande":"ag ariana", "Sarah Jessica Parker":"sjp", "Jennifer Lopez":"jlo j.lo", "Fenty Beauty":"fenty rihanna", "Kylie Cosmetics":"kylie", "Maison Alhambra":"alhambra", "Giorgio Beverly Hills":"giorgio", "KKW Fragrance":"kkw kim kardashian", "Tommy Hilfiger":"tommy", "Tommy Bahama":"tommy", "Initio":"initio parfums prives", "Joop!":"joop",
   "Armaf":"cdn", "Maison Alhambra":"alhambra", "Al Haramain":"alharamain haramain", "Al Wataniah":"alwataniah wataniah",
   "French Avenue":"fragrance world", "Acqua di Parma":"adp parma"
+};
+// país de origem da casa (sede da marca), linha "País de origem" nos detalhes do cartão e na busca; casa nova: acrescentar aqui
+const PAIS = {
+  "Abercrombie & Fitch":"EUA", "Acqua di Parma":"Itália", "Adidas":"Alemanha", "Afnan":"Emirados Árabes", "Ajmal":"Emirados Árabes",
+  "Al Haramain":"Emirados Árabes", "Al Wataniah":"Emirados Árabes", "American Eagle":"EUA", "Amouage":"Omã", "Antonio Banderas":"Espanha",
+  "Aramis":"EUA", "Ariana Grande":"EUA", "Armaf":"Emirados Árabes", "Azzaro":"França", "Banana Republic":"EUA", "Benetton":"Itália",
+  "Beyoncé":"EUA", "Billie Eilish":"EUA", "Boadicea the Victorious":"Reino Unido", "Britney Spears":"EUA", "Brut":"EUA",
+  "Burberry":"Reino Unido", "Bvlgari":"Itália", "Byredo":"Suécia", "Cacharel":"França", "Calvin Klein":"EUA", "Carolina Herrera":"EUA",
+  "Cartier":"França", "Cerruti":"Itália", "Chanel":"França", "Chloé":"França", "Clinique":"EUA", "Coach":"EUA", "Creed":"França",
+  "David Beckham":"Reino Unido", "Davidoff":"Suíça", "Diesel":"Itália", "Dior":"França", "Diptyque":"França", "Dolce&Gabbana":"Itália",
+  "Dunhill":"Reino Unido", "Elizabeth Arden":"EUA", "Elizabeth Taylor":"EUA", "Emporio Armani":"Itália", "Estée Lauder":"EUA",
+  "Ex Nihilo":"França", "Fendi":"Itália", "Fenty Beauty":"EUA", "French Avenue":"Emirados Árabes", "Frédéric Malle":"França",
+  "Geoffrey Beene":"EUA", "Giardini di Toscana":"Itália", "Giorgio Armani":"Itália", "Giorgio Beverly Hills":"EUA", "Givenchy":"França",
+  "Gucci":"Itália", "Guerlain":"França", "Guess":"EUA", "Guy Laroche":"França", "Halston":"EUA", "Hermes":"França", "Hermès":"França",
+  "Hugo Boss":"Alemanha", "Initio":"França", "Issey Miyake":"Japão", "Jean Paul Gaultier":"França", "Jennifer Lopez":"EUA",
+  "Jimmy Choo":"Reino Unido", "Jo Malone London":"Reino Unido", "John Varvatos":"EUA", "Joop!":"Alemanha", "Jovan":"EUA",
+  "Juliette Has a Gun":"França", "KKW Fragrance":"EUA", "Karl Lagerfeld":"França", "Kayali":"Emirados Árabes", "Kenneth Cole":"EUA",
+  "Kenzo":"França", "Kilian":"França", "Kylie Cosmetics":"EUA", "Lacoste":"França", "Lalique":"França", "Lancôme":"França",
+  "Lattafa":"Emirados Árabes", "Le Labo":"EUA", "Liz Claiborne":"EUA", "Loewe":"Espanha", "Louis Vuitton":"França",
+  "Maison Alhambra":"Emirados Árabes", "Maison Francis Kurkdjian":"França", "Maison Margiela":"França", "Mancera":"França",
+  "Marc Jacobs":"EUA", "Michael Kors":"EUA", "Montale":"França", "Montblanc":"Alemanha", "Moschino":"Itália", "Mugler":"França",
+  "Narciso Rodriguez":"EUA", "Nautica":"EUA", "Nina Ricci":"França", "Nishane":"Turquia", "Orientica":"Emirados Árabes",
+  "Parfums de Marly":"França", "Penhaligon's":"Reino Unido", "Pierre Cardin":"França", "Prada":"Itália", "Rabanne":"França",
+  "Ralph Lauren":"EUA", "Rasasi":"Emirados Árabes", "Rayhaan":"Emirados Árabes", "Sabrina Carpenter":"EUA",
+  "Salvatore Ferragamo":"Itália", "Sospiro":"Itália", "Stetson":"EUA", "Swiss Arabian":"Emirados Árabes", "Ted Lapidus":"França",
+  "Tiffany":"EUA", "Tiziana Terenzi":"Itália", "Tom Ford":"EUA", "Tommy Bahama":"EUA", "Tommy Hilfiger":"EUA", "Valentino":"Itália",
+  "Versace":"Itália", "Victoria's Secret":"EUA", "Viktor&Rolf":"Países Baixos", "Xerjoff":"Itália", "Yves Saint Laurent":"França",
+  "Zara":"Espanha", "Zimaya":"Emirados Árabes"
 };
 // sigla digitada (ck, ysl...) não procura no meio das palavras ("ck" não acha "Black"): vale a sigla da casa ou o começo de uma palavra
 const SIGLAS = new Set(Object.values(ALIAS).flatMap(s => s.split(" ")).filter(w => w.length <= 3));
@@ -310,7 +339,7 @@ function famGrupo(f){
 function matches(p, v){
   if (state.fam && famGrupo(p.f) !== state.fam) return false;
   if (state.q){
-    const hay = norm(`${p.c} ${ALIAS[p.c]||""} ${p.p} ${p.k} ${p.ml||""}`);
+    const hay = norm(`${p.c} ${ALIAS[p.c]||""} ${PAIS[p.c]||""} ${p.p} ${p.k} ${p.ml||""}`);
     const words = hay.split(/[\s\-]+/), sig = (ALIAS[p.c]||"").split(" ");
     const hit = t => SIGLAS.has(t) ? sig.includes(t) || words.some(w => w.startsWith(t)) : hay.includes(t);
     if (!norm(state.q).split(/\s+/).filter(Boolean).every(hit)) return false;
@@ -450,6 +479,7 @@ function card(p, v){
         ${p.n?`<dt>Notas</dt><dd>${esc(p.n)}</dd>`:""}
         ${p.a?`<dt>Lançamento</dt><dd>${esc(String(p.a))}</dd>`:""}
         <dt>Tipo de casa</dt><dd>${esc(p.t)}</dd>
+        ${PAIS[p.c]?`<dt>País de origem</dt><dd>${esc(PAIS[p.c])}</dd>`:""}
         ${(p.cat||[]).length?`<dt>Categoria</dt><dd>${esc(p.cat.join(", "))}</dd>`:""}
         ${p.s?`<dt>Situação</dt><dd>${esc(p.s)}</dd>`:""}
         ${isDC(p)?`<dt>Preço</dt><dd>${p.r!=null?`${money(p.r)} (colecionador)${p.bt?` · ${esc(p.bt)}`:""}${p.bd?` (${esc(p.bd)})`:""}`:"Sem oferta encontrada"}</dd>`
@@ -538,6 +568,9 @@ function render(){
     items.sort((a,b)=>{ const ka=key(a), kb=key(b); if(ka==null) return 1; if(kb==null) return -1; return s==="desc"? kb-ka : ka-kb; });
   } else if (s==="az"){
     items.sort((a,b)=> a[0].c.localeCompare(b[0].c,"pt") || a[0].p.localeCompare(b[0].p,"pt") || a[0].ml-b[0].ml);
+  } else if (s==="fz"){  // nome do perfume (fragrância), depois casa e tamanho; vale com qualquer filtro
+    const cmp = (x,y) => x.localeCompare(y,"pt",{sensitivity:"base",numeric:true});
+    items.sort((a,b)=> cmp(a[0].p,b[0].p) || cmp(a[0].c,b[0].c) || (a[0].ml||0)-(b[0].ml||0));
   }
   const withPrice = items.filter(x=>x[1].reg!=null).length;
   document.getElementById("count").textContent = `${items.length} ${items.length===1?"apresentação":"apresentações"} · ${withPrice} com ${state.dc ? "preço de colecionador" : "preço regular"}`;
