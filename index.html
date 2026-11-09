@@ -206,7 +206,7 @@ const FOTOS = {"1":"66c490d1e480c25e3e0d51b834d23ee5.jpg","10":"840e0346828ef2ac
 const BANDS = [["all","Todas"],["b150","> US$ 150"],["b100","US$ 100–150"],["b50","US$ 50–100"],["b30","US$ 30–50"]];
 const TIPOS = [["grife","Grife"],["nicho","Nicho"],["arabe","Árabe"],["varejo","Varejo"]];
 // categorias (coluna AC da planilha): somam-se ao tipo de casa; um clássico de grife aparece em Grife e em Clássicos
-const CATS = [["classico","Clássicos","Clássico"], ["dc","DC Clássicos","DC Clássico"]];
+const CATS = [["classico","Clássicos","Clássico"], ["dc","DC Clássicos","DC Clássico"], ["unissex","Unissex","Unissex"]];   // Unissex: botão desde 08/11/2026
 // siglas e nomes alternativos das casas, para a busca (ysl, ck, pdm, mfk...)
 const ALIAS = {
   "Yves Saint Laurent":"ysl saint laurent", "Calvin Klein":"ck", "Parfums de Marly":"pdm marly", "Maison Francis Kurkdjian":"mfk kurkdjian",
@@ -261,7 +261,7 @@ const TIPOS_PRECO = [
   ["promo", "Promoção EUA", "Preço promocional", "Ex.: Jomashop, Macy's com cupom", "Preço com desconto ou cupom, ou de discounters como a Jomashop."],
   ["duty_free", "Duty free", "Preço duty free", "Ex.: Duty free do aeroporto de Miami", "Preço em loja duty free (aeroporto, travel retail)."],
   ["leilao", "Leilão", "Preço em leilão", "Ex.: eBay, leilão online", "Preço que você viu em leilão na internet (arremate ou lance). Fica como referência: não entra no menor preço."]];
-const state = { q:"", fam:"", band:"all", grife:false, nicho:false, arabe:false, varejo:false, classico:false, dc:false, semPreco:false, onlyManual:false, sort:"rel", open:null, mtype:"regular" };
+const state = { q:"", fam:"", band:"all", grife:false, nicho:false, arabe:false, varejo:false, classico:false, dc:false, unissex:false, semPreco:false, onlyManual:false, sort:"rel", open:null, mtype:"regular" };
 const ARABES = ["Lattafa","Maison Alhambra","Armaf","French Avenue","Rasasi","Al Haramain","Afnan","Ajmal","Swiss Arabian","Al Wataniah"];
 let manual = {};        // id -> {regular?, promo?, duty_free?, leilao?}, cada um {preco, fonte, data, registrado_em}
 let manualCat = {}, manualNovos = {};   // anotações dos itens do catálogo (precos_manuais) e dos itens novos (itens_novos)
